@@ -5,7 +5,7 @@
 * {
     /* ↑ Zvaigznīte (*) = selektors VISIEM elementiem */
    
-    margin: 0;
+    margin: 6;
     /* ↑ Noņem visas ārējās atstarpes */
    
     padding: 0;
@@ -24,9 +24,9 @@ body {
     /* ↑ Stili VISAM lapas saturam */
    
 
-      font-family: "Jacquard 12 Charted", system-ui;
-      font-weight: 800;
-     font-style: normal;
+      font-family: "Ovo", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
     /* ↑ Izmanto sistēmas fontu (Mac/Windows default) */
@@ -165,7 +165,10 @@ main {
 
 .hero h2 {
     /* ↑ Mērķē <h2> kas ir .hero iekšā */
-   
+   font-family: "Jacquard 12 Charted", system-ui;
+      font-weight: 800;
+     font-style: normal;
+
     font-size: 3rem;
     /* ↑ Ļoti liels (64px) - galvenais virsraksts */
    
