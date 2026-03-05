@@ -5,7 +5,7 @@
 * {
     /* ↑ Zvaigznīte (*) = selektors VISIEM elementiem */
    
-    margin: 0;
+    margin: 6;
     /* ↑ Noņem visas ārējās atstarpes */
    
     padding: 0;
@@ -24,10 +24,10 @@ body {
     /* ↑ Stili VISAM lapas saturam */
    
 
-      font-family: "Jacquard 12 Charted", system-ui;
-      font-weight: 800;
-     font-style: normal;
-}
+      font-family: "Ovo", serif;
+  font-weight: 400;
+  font-style: normal;
+
 
     /* ↑ Izmanto sistēmas fontu (Mac/Windows default) */
     /* Sans-serif = bez dekoratīvām līnijām */
@@ -165,11 +165,14 @@ main {
 
 .hero h2 {
     /* ↑ Mērķē <h2> kas ir .hero iekšā */
-   
-    font-size: 3rem;
+    font-family: "Coral Pixels", serif;
+  font-weight: 400;
+  font-style: normal;
+
+    font-size: 21px;
     /* ↑ Ļoti liels (64px) - galvenais virsraksts */
    
-    font-weight: 300;
+    /* ↑font-weight: 400;
     /* ↑ Plāns fonts (light) */
     /* 300 ir viegls, 400 normāls, 700 treknraksts */
    
@@ -214,7 +217,7 @@ main {
 .portfolio h2 {
     /* ↑ Virsraksts portfolio sekcijā */
    
-    font-size: 0.875rem;
+    font-size: 3px;
     /* ↑ Mazs (14px) */
    
     text-transform: uppercase;
