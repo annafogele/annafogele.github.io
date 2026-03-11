@@ -22,10 +22,8 @@
 
 body {
     /* ↑ Stili VISAM lapas saturam */
-   
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    /* ↑ Izmanto sistēmas fontu (Mac/Windows default) */
-    /* Sans-serif = bez dekoratīvām līnijām */
+    font-family: 'Rubik', sans-serif;
+    /* ↑ Galvenais teksts lieto Rubik fontu */
    
     line-height: 1.6;
     /* ↑ Atstarpe starp teksta rindām (1.6x no fonta izmēra) */
@@ -36,7 +34,7 @@ body {
     /* Hex kods: # + 6 simboli (RR GG BB) */
    
     background: #ffffff;
-    /* ↑ Lapas fona krāsa - gaišs pelēks */
+    /* ↑ Lapas fona krāsa - balts */
 }
 
 /* ============================================
@@ -79,7 +77,9 @@ nav {
 
 nav h1 {
     /* ↑ Mērķē <h1> kas ir nav iekšā (logo/vārds) */
-   
+    font-family: 'Coral Pixels', serif;
+    /* ↑ Logo teksts izmanto dekoratīvo Coral Pixels fontu */
+
     font-size: 1rem;
     /* ↑ Izmērs 1rem (≈16px) - mazs, minimālistisks */
    
