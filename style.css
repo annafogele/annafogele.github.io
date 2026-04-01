@@ -23,9 +23,9 @@ body {
   display: grid;
   /* sidebar is fixed-width, gallery takes the rest */
   /* center the whole thing: outer cols eat equal space */
-  grid-template-columns: 1fr 220px 600px 1fr;
+  grid-template-columns: 0.2fr 220px 740px 0.2fr;
   min-height: 100vh;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -37,8 +37,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 1rem 3rem 20rem 1rem;
+  justify-content: center; /* restored centered alignment */
+  padding: 2rem 2rem 20rem 1rem;
   border-right: 1px solid #e5e5e5;
 }
 
@@ -53,11 +53,12 @@ body {
 }
 
 .name {
+  position: static;
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   color: #1a1a1a;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.8rem;
   line-height: 1.2;
 }
 
@@ -100,18 +101,50 @@ body {
 
 /* ===== PROJECTS ===== */
 .project {
-  background: #d8e6ab;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
-  padding: 1.75rem;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  padding: 1rem 0;
   margin-bottom: 2.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: none;
+}
+
+.proj-img-vert {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.proj-img-vert img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .project:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  cursor: zoom-out;
+}
+
+.image-modal img {
+  max-width: 95%;
+  max-height: 95%;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  border: 2px solid #fff;
+  border-radius: 6px;
 }
 
 .proj-img {
@@ -136,9 +169,9 @@ body {
 }
 
 .project p {
-  color: #999;
+  color: #ef6161;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* ===== FOOTER ===== */
