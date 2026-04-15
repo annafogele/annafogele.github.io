@@ -30,7 +30,7 @@
         <li>
           <a href="#" class="dropdown-toggle" onclick="toggleContactMenu(event)">Contact</a>
           <div id="contact-dropdown" class="dropdown-menu" style="display: none;">
-            <p>E-pasts: anna@example.com<br>Tel: +371 27437754</p>
+            <p>E-pasts: anna.fogele.10@gmail.com<br>Tel: +371 27437754</p>
           </div>
         </li>
       </ul>
@@ -160,20 +160,47 @@
     function toggleAboutMenu(event) {
       event.preventDefault();
       const dropdown = document.getElementById('about-dropdown');
-      if (dropdown.style.display === 'none') {
-        dropdown.style.display = 'block';
-      } else {
-        dropdown.style.display = 'none';
-      }
+      toggleDropdown(dropdown, event.currentTarget);
     }
 
     function toggleContactMenu(event) {
       event.preventDefault();
       const dropdown = document.getElementById('contact-dropdown');
-      if (dropdown.style.display === 'none') {
+      toggleDropdown(dropdown, event.currentTarget);
+    }
+
+    function toggleDropdown(dropdown, toggle) {
+      if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+        if (window.innerWidth <= 700) {
+          // mobilajā režīmā aizveram citu dropdown
+          const otherId = dropdown.id === 'about-dropdown' ? 'contact-dropdown' : 'about-dropdown';
+          const otherDropdown = document.getElementById(otherId);
+          if (otherDropdown.style.display === 'block') {
+            otherDropdown.style.display = 'none';
+            // atjaunojam stilus
+            otherDropdown.style.position = '';
+            otherDropdown.style.left = '';
+            otherDropdown.style.top = '';
+            otherDropdown.style.margin = '';
+          }
+        }
         dropdown.style.display = 'block';
+        if (window.innerWidth <= 700) {
+          // centrējam zem toggle elementa
+          const toggleRect = toggle.getBoundingClientRect();
+          const sidebarRect = toggle.closest('.sidebar').getBoundingClientRect();
+          dropdown.style.position = 'absolute';
+          dropdown.style.left = (toggleRect.left - sidebarRect.left + toggleRect.width / 2 - dropdown.offsetWidth / 2) + 'px';
+          dropdown.style.top = (toggleRect.bottom - sidebarRect.top + 5) + 'px';
+          dropdown.style.margin = '0';
+        }
       } else {
         dropdown.style.display = 'none';
+        // atjaunojam stilus
+        dropdown.style.position = '';
+        dropdown.style.left = '';
+        dropdown.style.top = '';
+        dropdown.style.margin = '';
       }
     }
 
