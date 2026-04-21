@@ -29,7 +29,9 @@ body {
   display: grid;
   /* sidebar is fixed-width, gallery takes the rest */
   /* center the whole thing: outer cols eat equal space */
-  grid-template-columns: 0.2fr 220px 740px 0.2fr;
+  grid-template-columns: 0.01fr 2px 4fr 0.2fr;
+  /* pirmais - left margin; otrais - sidebar width; tresais-gallery width;
+  ceturtais - right margin */
   min-height: 100vh;
   max-width: 1500px;
   margin: 0 auto;
