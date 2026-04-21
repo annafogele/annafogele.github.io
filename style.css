@@ -29,11 +29,11 @@ body {
   display: grid;
   /* sidebar is fixed-width, gallery takes the rest */
   /* center the whole thing: outer cols eat equal space */
-  grid-template-columns: 0.01fr 2px 4fr 0.2fr;
+  grid-template-columns: 0.01fr 1px 9fr 0.2r;
   /* pirmais - left margin; otrais - sidebar width; tresais-gallery width;
   ceturtais - right margin */
   min-height: 100vh;
-  max-width: 1500px;
+  max-width: 1570px;
   margin: 0 auto;
 }
 
@@ -46,8 +46,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; /* restored centered alignment */
-  padding: 2rem 2rem 20rem 1rem;
-  border-right: 1px solid #e5e5e5;
+  padding: 2rem 2rem 2rem 1rem;
+  border-right: 0.1px solid #2e6a48;
+  
 }
 
 
@@ -62,26 +63,30 @@ body {
 
 .name {
   position: static;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #1a1a1a;
+  font-size: 1.3rem;
+  font-weight: 100;
+  letter-spacing: 0.02em;
+  color: #000000;
   margin-bottom: 1.8rem;
   line-height: 1.2;
 }
 
 .menu {
-  list-style: none;
+  color: #2261a068;
+  list-style-type: none;
+  /* list-style-type: "♡"; */
+  
 }
 
 .menu li {
   margin-bottom: 1.1rem;
+  margin-inline: -1rem;
 }
 
 .menu a {
-  color: #888;
+  color: #2261a068;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1rem;
   display: block;
   transition: color 0.2s, transform 0.2s;
 }
