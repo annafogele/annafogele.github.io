@@ -1,39 +1,25 @@
-/* ============================================
-   CSS RESET - Make all things start same
-   ============================================ */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BODY - Whole page look ===== */
 body {
- font-family: 'Rubik', sans-serif;
+  font-family: 'Rubik', sans-serif;
   color: #1a1a1a;
   background: #fff;
   scroll-behavior: smooth;
-  line-height: 1.6; /* Change space between lines here */
+  line-height: 1.6;
   min-height: 100vh;
+  user-select: none;
 }
 
-
-@keyframes scrollLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+a {
+  color: inherit;
+  text-decoration: none;
+  user-select: none;
 }
 
-/* Prevent the hearts from overlapping your sticky sidebar */
-.site {
-  padding-top: 0rem;         /* pushes content down so it's not hidden */
-}
-
-/* Optional subtle animation – hearts slowly drift sideways */
 @keyframes driftHearts {
   0% { transform: translateX(0); }
   100% { transform: translateX(-20px); }
@@ -41,218 +27,152 @@ body {
 
 .heart-line {
   animation: driftHearts 12s linear infinite alternate;
-}s
 }
 
-/* ===== LAYOUT: centered two-column - How page split ===== */
+/* ===== LAYOUT ===== */
 .site {
-  display: grid;
-  /* sidebar is fixed-width, gallery takes the rest */
-  /* center the whole thing: outer cols eat equal space */
-  grid-template-columns: 0.01fr 1px 9fr 0.2r;
-  /* pirmais - left margin; otrais - sidebar width; tresais-gallery width;
-  ceturtais - right margin */
-  min-height: 100vh;
-  max-width: 1020px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  display: flex;
+  align-items: flex-start; /* needed for sticky sidebar */
+  width: 100%;
 }
 
-/* ===== SIDEBAR - Left side box ===== */
+/* ===== SIDEBAR ===== */
 .sidebar {
-  grid-column: 1;
+  flex: 1;
   position: sticky;
   top: 0;
   height: 100vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* restored centered alignment */
-  padding: 2rem 2rem 2rem 0.25rem;
-  border-right: 0.1px solid #6d1f4671;
-  
-  
+  justify-content: flex-start; /* changed from center */
+  padding: 35vh 1.5rem 2rem; /* top padding pushes content down visually */
+  border-right: 1px solid #e5e5e5;
+  background: #fff;
+  scrollbar-width: none;
 }
 
+/* ===== GIF above name — desktop only ===== */
+.sidebar-gif {
+  width: 197px;
+  height: 197px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1.5rem;
+  marz
+}
 
-/* ===== PIXEL FONT — sidebar only ===== */
-/* 'Coral Pixels' doesn't load via Google Fonts (it's not in their catalog).
-   Pixelify Sans is a real pixel-style font that does. Swap back to
-   'Coral Pixels' if you self-host the file. */
 .name,
 .menu a {
   font-family: 'Pixelify Sans', 'Coral Pixels', monospace;
 }
 
 .name {
-  position: static;
   font-size: 1.3rem;
   font-weight: 100;
   letter-spacing: 0.025em;
-  color: #000000;
+  color: #000;
   margin-bottom: 1.5rem;
   line-height: 1.2;
   filter: blur(0.5px);
 }
 
 .menu {
-  color: #df599868;
   list-style-type: none;
-  /* list-style-type: "♡"; */
-  
 }
 
 .menu li {
   margin-bottom: 1.1rem;
-  margin-inline: rem;
   position: relative;
 }
-./* Dropdown menu – plain text, absolutely positioned */
+
 .dropdown-menu {
-  position: absolute;
-  top: 100%;                /* directly below the link */
-  left: 0;
-  margin-top: 0.3rem;       /* tiny gap between link and text */
-  padding: 0;
-  background: transparent;  /* no box */
-  border: none;
-  box-shadow: none;
-  min-width: auto;
-  z-index: 20;
-  font-family: 'Pixelify Sans', 'Coral Pixels', monospace; /* match sidebar font */
+  position: static;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background: #946b6b;
+  font-family: Arial, monospace;
   font-size: 0.9rem;
-  color: #888;              /* same as menu link color */
-  line-height: 1.4;
-  white-space: nowrap;      /* keep text on one line */
+  color: #fff;
+  line-height: 1.5;
+  white-space: normal;
   display: none;
+  z-index: 20;
 }
 
-/* Optional: indent the dropdown text slightly for hierarchy */
 .dropdown-menu p {
   margin: 0;
   padding: 0;
 }
+
 .menu a {
-  color: #2261a068;
+  color: #125ca568;
   text-decoration: none;
   font-size: 1rem;
   display: block;
-  transition: color 0.2s, transform 0.2s; /* Smooth change */
+  transition: color 0.2s, transform 0.2s;
 }
 
 .menu a:hover {
-  color: #1a1a1a; /* Hover color */
-  transform: translateX(4px); /* Move right on hover */
+  color: #1a1a1a;
+  transform: translateX(4px);
 }
 
-/* ===== DROPDOWN MENU - Pop up boxes ===== */
 .dropdown-toggle {
-  cursor: pointer; /* Hand cursor */
+  cursor: pointer;
 }
 
-.dropdown-menu {
-  margin-top: 0.8rem; /* Space above box */
-  margin-left: 0.3rem; /* Space left */
-  padding: 0.8rem; /* Space inside box */
-  background: #d5efd987; /* Box background color */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cg fill='%23000' fill-opacity='0.1'%3E%3Crect width='1' height='1' x='0' y='0'/%3E%3Crect width='1' height='1' x='2' y='2'/%3E%3C/g%3E%3C/svg%3E"); /* Dither pattern */
-  background-repeat: repeat; /* Repeat pattern */
-  border-radius: 0px; /* Round corners */
-  font-size: 0.8rem; /* Text size */
-  font-family: 'Coral Pixels', monospace; /* Special font */
-  color: #555555; /* Text color */
-  animation: slideDown 0.2s ease-out; /* Slide down effect */
-}
-
-.dropdown-menu p {
-  margin: 0;
-  line-height: 1.5;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== CONTENT / GALLERY - Main pictures area ===== */
+/* ===== CONTENT — natural page scroll now ===== */
 .content {
-  grid-column: 3;
-  padding: 0rem 0.5rem 3rem 0.8rem;
+  flex: 4;
+  padding: 2rem 0.5rem 3rem 2rem;
 }
 
-/* ===== SECTION TITLE - Big word at top ===== */
 .section-title {
-  font-size: 0.72rem; /* Title size */
-  text-transform: uppercase; /* Make all big letters */
-  letter-spacing: 0.16em; /* Space between letters */
-  color: rgb(18, 14, 14); /* works kraasa */
-  margin-bottom: 2.5rem; /* Space below title */
-  font-weight: 500; /* How thick text */
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgb(18, 14, 14);
+  margin-bottom: 2.5rem;
+  font-weight: 500;
 }
 
-/* ===== PROJECTS - Each picture group ===== */
+/* ===== PROJECTS ===== */
 .project {
-  background: transparent; /* No background */
-  border-radius: 0; /* Sharp corners */
+  background: transparent;
   overflow: visible;
-  box-shadow: none; /* No shadow */
-  padding: 1rem 0; /* Space inside */
-  margin-bottom: 2.5rem; /* Space below */
-  transition: none; /* No change effect */
+  box-shadow: none;
+  padding: 1rem 0;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .proj-img-vert {
-  display: flex; /* Line up pictures */
-  flex-direction: column; /* One on top of other */
-  gap: 0.5rem; /* Space between pictures */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .proj-img-vert img {
-  width: 100%; /* Full width */
-  height: auto; /* Keep shape */
-  object-fit: contain; /* Fit inside */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   display: block;
-}
-
-.project:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-}
-
-.image-modal {
-  position: fixed; /* Stay in place */
-  inset: 0; /* Cover whole screen */
-  background: rgba(0,0,0,0.7); /* Dark background */
-  display: none; /* Hide by default */
-  align-items: center; /* Center picture */
-  justify-content: center;
-  z-index: 999; /* On top */
-  cursor: zoom-out; /* Zoom out cursor */
-}
-
-.image-modal img {
-  max-width: 95%; /* Not too big */
-  max-height: 95%;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.5); /* Big shadow */
-  border: 2px solid #fff; /* White border */
-  border-radius: 6px; /* Round corners */
 }
 
 .proj-img {
   width: 100%;
-  aspect-ratio: unset;
-  height: 650px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3.5rem;
   background: #f5f5f3;
   margin-bottom: 1.25rem;
-  border-radius: 6px;
   color: #d0d0ce;
 }
 
@@ -269,104 +189,169 @@ body {
   font-weight: 400;
 }
 
-/* ===== FOOTER - Bottom of page ===== */
+/* ===== FOOTER ===== */
 .footer {
-  padding: 3rem 0 2rem; /* Space inside */
-  border-top: 1px solid #e5e5e5; /* Top line */
-  margin-top: 1rem; /* Space above */
-  text-align: center; /* Center text */
+  padding: 3rem 0 2rem;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .footer p {
-  color: #bbb; /* Light gray text */
-  font-size: 0.8rem; /* Small text */
-  margin-bottom: 1rem; /* Space below */
+  color: #987bc7;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .social {
-  display: flex; /* Line up links */
-  justify-content: center; /* Center them */
-  gap: 2rem; /* Space between */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .social a {
-  color: #aaa; /* Link color */
-  text-decoration: none; /* No underline */
-  font-size: 0.8rem; /* Link size */
-  transition: color 0.2s; /* Smooth color change */
+  color: #8c9795;
+  font-size: 0.8rem;
+  transition: color 0.2s;
 }
 
 .social a:hover {
-  color: #1a1a1a; /* Dark on hover */
+  color: #1a1a1a;
 }
 
-/* ===== BACK TO TOP - Button to go up ===== */
+/* ===== BACK TO TOP ===== */
 #top {
-  position: fixed; /* Stay in corner */
-  bottom: 2rem; /* From bottom */
-  right: 2rem; /* From right */
-  width: 44px; /* Button size */
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
   height: 44px;
-  display: flex; /* Center arrow */
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff; /* White background */
-  border: 1px solid #e5e5e5; /* Thin border */
-  border-radius: 50%; /* Round shape */
-  color: #999; /* Arrow color */
-  font-size: 1rem; /* Arrow size */
-  text-decoration: none; /* No underline */
-  opacity: 0; /* Hide at first */
-  transition: opacity 0.3s, box-shadow 0.2s; /* Smooth show */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Small shadow */
-  z-index: 100; /* On top */
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  color: #999;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 100;
 }
 
 #top:hover {
   color: #1a1a1a;
   box-shadow: 0 2px 16px rgba(0,0,0,0.12);
 }
-/* ===== BANNER ANIMATION ===== */
+
+/* ===== BANNER ===== */
 @keyframes scrollBanner {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-20%); }
+  100% { transform: translateX(-50%); }
 }
-/* ===== RESPONSIVE ===== */
-@media (max-width: 700px) {
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== IMAGE MODAL ===== */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  cursor: zoom-out;
+}
+
+.image-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+ .video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-bottom: 1rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* ===== MOBILE / NARROW ===== */
+@media (max-width: 767px) {
   .site {
-    grid-template-columns: 1fr; /* One column */
+    width: 100%;
+    margin: 5rem 0 0;
+    flex-direction: column;
   }
 
   .sidebar {
-    grid-column: 1;
-    position: relative; /* For dropdown position */
-    height: auto; /* Fit content */
-    flex-direction: column;
-    align-items: center; /* Center name */
-    padding: 0.5rem 1rem; /* Less padding */
-    border-right: none; /* No right line */
-    border-bottom: 1px solid #e5e5e5; /* Bottom line */
+    position: relative;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+    overflow: visible;
+    z-index: 50;
+  }
+
+  .sidebar-gif {
+    display: none;
   }
 
   .name {
-    margin-bottom: 1rem;
-    font-size: 2rem; /* Bigger name */
-    text-align: center; /* Center name */
+    font-size: 1rem;
+    margin-bottom: 0;
+    white-space: nowrap;
   }
 
   .menu {
-    display: flex; /* Horizontal menu */
+    display: flex;
     flex-direction: row;
-    gap: 1.5rem; /* Space between links */
+    gap: 1.5rem;
+    align-items: center;
+    position: relative;
   }
 
   .menu li {
-    margin-bottom: 0; /* No bottom space */
+    margin-bottom: 0;
+    position: relative;
   }
 
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 220px;
+  margin: 0;
+  z-index: 100;
+  padding: 0.8rem 1.5rem;
+}
+
   .content {
-    grid-column: 1;
-    padding: 2rem 1rem 3rem 1rem; /* Symmetric padding for centering */
+    width: 100%;
+    padding: 2rem 1.5rem 3rem;
   }
-  
+
+  .project {
+    margin-bottom: 2.5rem;
+  }
 }
