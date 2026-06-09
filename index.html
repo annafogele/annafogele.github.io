@@ -1,243 +1,223 @@
 <!DOCTYPE html>
-<!-- ↑ Šis saka pārlūkam: "Šis ir HTML5 dokuments" -->
-
 <html lang="lv">
-<!-- ↑ <html> - Visa lapas sākums. lang="lv" nozīmē latviešu valoda -->
-
 <head>
-<!-- ↑ <head> satur informāciju PAR lapu (lietotājs neredz) -->
-
-    <meta charset="UTF-8">
-    <!-- ↑ Atbalsta latviešu burtus (ā, č, ē, ģ...) -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ↑ Lai lapa labi izskatās uz mobilajiem telefoniem -->
-
-    <title>Anna Fogele</title>
-    <!-- ↑ Teksts, ko redz pārlūka tab augšā -->
-
-    <link rel="stylesheet" href="style.css">
-    <!-- ↑ SVARĪGI! Pievieno CSS failu ar stiliem -->
-    <!-- href="style.css" nozīmē: meklē style.css TAJĀ PAŠĀ mapē -->
-
+  <meta charset="UTF-8">
+ <meta name="google-site-verification" content="Wlq3qAAF2EmN-ogofUCBIltF5YPpo65VdPgEthYdexg" />
+  <meta name="author" content="Anna Fogele">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna Fogele</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♡</text></svg>">
 </head>
-<!-- ↑ Head beidzas -->
 
 <body>
-<!-- ↑ <body> satur visu, ko lietotājs REDZ lapā -->
-   
-    <!-- ========================================
-         HEADER - Augšējā navigācijas josla
-         ======================================== -->
-    <header>
-    <!-- ↑ Semantiskais tags lapas galvenei -->
-    <!-- Šeit būs logo un menu -->
 
-        <nav>
-        <!-- ↑ <nav> - navigācijas elements -->
+<div class="banner" style="position: fixed; top: 30px; left: 0; width: 100%; overflow: hidden; white-space: nowrap; pointer-events: none; z-index: 10; color: #000000c0; font-size: 0.6rem; letter-spacing: 1px; font-family: Arial, sans-serif; font-weight: bold;">
+ <div class="banner-track" style="display: inline-block; animation: scrollBanner 30s linear infinite;">
+  <span>I thought about you yesterday and I'll be with you tomorrow but for now I'm set to be trapped in the in-between of whatever there may be well i love me you there is not much more than all there ever was and all there ever will be but for now I'm set to be trapped by the what that is or whatever there may be oh well i love me you still &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>I thought about you yesterday and I'll be with you tomorrow but for now I'm set to be trapped in the in-between of whatever there may be well i love me you there is not much more than all there ever was and all there ever will be but for now I'm set to be trapped by the what that is or whatever there may be oh well i love me you still &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+</div>
+</div>
 
-            <h1>Anna Fogele</h1>
-            <!-- ↑ <h1> - Galvenais virsraksts (lielākais) -->
-            <!-- Šeit students raksta savu vārdu -->
+  <div class="site">
 
-            <ul>
-            <!-- ↑ <ul> - Unordered List (saraksts ar punktiem) -->
+    <aside class="sidebar">
+      <img src="portfolkoio materia;/anna_fogele_galva1.gif" alt="" class="sidebar-gif">
+      <h1 class="name">Anna Fogele</h1>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#" class="dropdown-toggle" onclick="toggleAboutMenu(event)">About</a>
+          <div id="about-dropdown" class="dropdown-menu" style="display: none;">
+            <p>Multimedial girl from Riga, Latvia.
+              <br>Based in the here and now, on my way forever.
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="dropdown-toggle" onclick="toggleContactMenu(event)">Contact</a>
+          <div id="contact-dropdown" class="dropdown-menu" style="display: none;">
+            <p>anna.fogele/e.10@gmail.com<br>+371 2743667754</p>
+          </div>
+        </li>
+      </ul>
+    </aside>
 
-                <li><a href="index.html">Sākums</a></li>
-                <!-- ↑ <li> - List Item (saraksta elements) -->
-                <!-- <a href="..."> - saite uz citu lapu -->
-                <!-- href="index.html" - ved uz šo pašu lapu -->
-
-                <li><a href="about.html">Par mani</a></li>
-                <!-- ↑ Saite uz "Par mani" lapu (vēl nav izveidota) -->
-
-                <li><a href="contact.html">Kontakti</a></li>
-                <!-- ↑ Saite uz "Kontakti" lapu (vēl nav izveidota) -->
-
-            </ul>
-            <!-- ↑ Saraksta beigas -->
-
-        </nav>
-        <!-- ↑ Navigācijas beigas -->
-
-    </header>
-    <!-- ↑ Header beidzas -->
-
-    <!-- ========================================
-         MAIN - Galvenais saturs
-         ======================================== -->
-    <main>
-    <!-- ↑ <main> - galvenais lapas saturs -->
-
-        <!-- HERO SEKCIJA - Liela intro daļa -->
-        <section class="hero">
-        <!-- ↑ <section> - semantisks satura bloks -->
-        <!-- class="hero" - CSS var mērķēt šo konkrēto sekciju -->
-
-            <h2>1 divi -> 3 <br>un tu esi briivs</h2>
-            <!-- ↑ <h2> - Otrā līmeņa virsraksts (mazāks par h1) -->
-            <!-- <br> - line break, jauna rinda -->
-
-            <p></p>
-            <!-- ↑ <p> - Paragraph (rindkopa/paragrāfs) -->
-
-        </section>
-        <!-- ↑ Hero sekcijas beigas -->
-
-        <!-- PORTFOLIO SEKCIJA - Darbu galerija -->
-        <section class="portfolio">
-        <!-- ↑ Jauna sekcija ar class="portfolio" -->
-
-          <!--  <h2>Izvēlētie darbi</h2> -->
-            <!-- ↑ Sekcijas virsraksts -->
-
-            <div class="gallery">
-            <!-- ↑ <div> - Container (kastīte grupēšanai) -->
-            <!-- class="gallery" - CSS izmantos, lai izveidotu grid layout -->
-
-                <!-- PROJEKTS 1 -->
-                <div class="project-card card1">
-                <!-- ↑ Pirmā projekta kartīte -->
-                <!-- 2 klases: "project-card" (vispārīgi stili) + "card1" (specifiskā krāsa) -->
-
-                    <div class=></div> <img src= "bildes/elza/elza/"></div>
-                    <!-- ↑ Tukša kastīte attēlam -->
-                    <!-- CSS piešķirs pelēko fonu -->
-                    <!-- Vēlāk var pievienot: <img src="images/project1.jpg"> -->
-
-                    <h3>Angel Elza</h3>
-                    <!-- ↑ <h3> - Trešā līmeņa virsraksts (vēl mazāks) -->
-                    <!-- Students šeit raksta sava darba nosaukumu -->
-
-                    <p>Digital photography, 2025</p>
-                    <!-- ↑ Īss darba apraksts -->
-
-                </div>
-                <!-- ↑ Projekta 1 beigas -->
-
-                <!-- PROJEKTS 2 -->
-                <div class="project-card card2">
-                <!-- ↑ Otrā projekta kartīte -->
-                <!-- card2 = cita fona krāsa CSS -->
-
-                    <div class="img-placeholder"></div>
-                    <!-- ↑ Vieta otrajam attēlam -->
-
-                    <h3>Projekta nosaukums</h3>
-                    <!-- ↑ Otra projekta nosaukums -->
-
-                    <p>Ģeneratīvā māksla, 2025</p>
-                    <!-- ↑ Otra projekta apraksts -->
-
-                </div>
-                <!-- ↑ Projekta 2 beigas -->
-
-                <!-- PROJEKTS 3 -->
-                <div class="project-card card3">
-                <!-- ↑ Trešā projekta kartīte -->
-
-                    <div class="img-placeholder"></div>
-                    <!-- ↑ Vieta trešajam attēlam -->
-
-                    <h3>Projekta nosaukums</h3>
-                    <!-- ↑ Trešā projekta nosaukums -->
-
-                    <p>Web eksperiments, 2025</p>
-                    <!-- ↑ Trešā projekta apraksts -->
-
-                </div>
-                <!-- ↑ Projekta 3 beigas -->
-
-            </div>
-            <!-- ↑ Gallery beidzas -->
-
-        </section>
-        <!-- ↑ Portfolio sekcijas beigas -->
-
-    </main>
-    <!-- ↑ Main satura beigas -->
-
-    <!-- ========================================
-         FOOTER - Apakšējā daļa ar info
-         ======================================== -->
-    <footer>
-    <!-- ↑ <footer> - semantisks tags lapas kājenei -->
-
-        <div class="footer-content">
-        <!-- ↑ Container kas centēs saturu (CSS) -->
-
-            <p>© 2026 Vārds Uzvārds</p>
-            <!-- ↑ Copyright simbols © un vārds -->
-
-            <div class="social-links">
-            <!-- ↑ Container sociālajām saitēm -->
-
-                <a href="https://www.instagram.com/vo.fogele/">Instagram</a>
-                <!-- ↑ Saite uz Instagram -->
-                <!-- href="" - pagaidu, vēlāk aizstāj ar īsto URL -->
-
-                 <!--  <a href="#">Youtube</a> -->
-                <!-- ↑ Saite uz Youtube -->
-
-                <!--  <a href="#">Facebook</a> -->
-                <!-- ↑ Saite uz Facebook -->
-
-            </div>
-            <!-- ↑ Social links beidzas -->
-
+    <main class="content">
+      <h2 class="section-title">works</h2>
+      <div class="project">
+         <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/gIckOWiKySc?si=gfJNu7iIcoyx_N0t" 
+          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+          clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <!-- ↑ Footer content beidzas -->
+        <h3>Average internet experience b like</h3>
+        <p>Gaze-reactive digital artwork, 2026</p>
+      </div>
 
-    </footer>
-    <!-- ↑ Footer beidzas -->
+  <div class="project">
+        <div class="proj-img-vert">
+          <img src="images/1233.jpeg" alt="Jjardin / Ruego">
+          <img src="portfolkoio materia;/berlinizstad/mazaks/8.jpg" alt="Jjardin / Ruego  ">
+          <img src="portfolkoio materia;/berlinizstad/MPNS1936.jpg" alt="Jjardin / Ruego">
+        </div>
+        <h3>JJARDIN / RUEGO</h3>
+        <p>Group show/event, 2025</p>
+      </div>
 
+      <div class="project">
+        <div class="proj-img-vert">
+          <img src="images/d1.jpg" alt="d1">
+          <img src="images/d2.jpg" alt="d2">
+          <img src="images/d3.jpg" alt="d3">
+          <img src="images/d4.jpg" alt="d4">
+        </div>
+        <h3>Ghost of a summers past</h3>
+        <p>Photo/Video, 2025</p>
+      </div>
+      
+      <div class="project">
+        <div class="proj-img-vert">
+          <img src="images/thumbnail.jpg" alt="thumbnail">
+        </div>
+        <h3>How far can i run?</h3>
+        <p>Video, 2024</p>
+      </div>
+
+  <div class="project">
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/9hXxE45FBdw?si=Wfv-JMlTE72bga9p&amp;controls=0" 
+          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+          clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <h3>Test 1-2-3</h3>
+        <p>Video for DJ set, 2025</p>
+      </div>
+
+ <div class="project">
+        <div class="proj-img-vert">
+          <img src="images/elza.jpg" alt="elza">
+        </div>
+        <h3>Angel Elza</h3>
+        <p>Digital photography, 2024</p>
+      </div>
+
+      <div class="project">
+        <div class="proj-img-vert">
+          <img src="images/emo downscaled33.jpg" alt="emo downscaled33">
+        </div>
+        <h3>E - emo Latvija</h3>
+        <p>Digital graphics, 2024</p>
+      </div>
+
+      <div class="project">
+        <div class="proj-img-vert">
+          <img src="images/asaru-krelles.jpg" alt="asaru krelles">
+        </div>
+        <h3>Letiņu sekss</h3>
+        <p>Digital graphics, 2024</p>
+      </div>
+      
+ <div class="project">
+        <div class="video-container">>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/SZG2uHr6uJM?si=3PIgw6CjjeB_s6Qc" 
+          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+           encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <h3>Dzirnavu iela 24</h3>
+        <p>Stop motion animation, 2022</p>
+      </div>
+
+      <!-- YOUTUBE VIDEO -->
+<div class="project">
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/alv5j4Rp7Lc?si=L4xf2nbBDTXvP1Is&amp;controls=0" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+ </div>
+        <h3>RIGA///I FILM MY FRIENDS</h3>
+        <p>High School diploma work, 2022</p>
+      </div>
+
+     
+      <footer class="footer">
+        <p>&copy; 2026 Anna Fogele</p>
+        <div class="social">
+          <a href="https://www.instagram.com/mudzis/">Instagram</a>
+          <a href="https://www.youtube.com/@ann-03">Youtube</a>
+          <a href="https://soundcloud.com/meitene2002">Soundcloud</a>
+        </div>
+      </footer>
+    </main>
+
+  </div>
+
+ <div id="image-modal" class="image-modal" style="display: none;">
+  <img id="modal-image" src="" alt="Full view" onclick="closeImageModal()">
+</div>
+
+  <a href="#" id="top">↑</a>
+
+  <script>
+    // MODAL
+    function openImageModal(src, alt) {
+      const modal = document.getElementById('image-modal');
+      const img = document.getElementById('modal-image');
+      img.src = src;
+      img.alt = alt;
+      modal.style.display = 'flex';
+    }
+
+    function closeImageModal() {
+      document.getElementById('image-modal').style.display = 'none';
+      document.getElementById('modal-image').src = '';
+    }
+
+    document.getElementById('image-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeImageModal();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeImageModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.proj-img-vert img').forEach(image => {
+        image.style.cursor = 'zoom-in';
+        image.addEventListener('click', e => {
+          e.stopPropagation();
+          openImageModal(e.currentTarget.src, e.currentTarget.alt);
+        });
+      });
+    });
+
+    // DROPDOWNS
+    function toggleAboutMenu(event) {
+      event.preventDefault();
+      toggleDropdown(document.getElementById('about-dropdown'));
+    }
+
+    function toggleContactMenu(event) {
+      event.preventDefault();
+      toggleDropdown(document.getElementById('contact-dropdown'));
+    }
+function toggleDropdown(dropdown) {
+  const isOpen = dropdown.style.display === 'block';
+  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+  dropdown.style.display = isOpen ? 'none' : 'block';
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.menu li')) {
+    document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+  }
+});
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('top').style.opacity = window.scrollY > 300 ? '1' : '0';
+    });
+  </script>
 </body>
-<!-- ↑ Body beidzas -->
-
 </html>
-<!-- ↑ Visa HTML dokumenta beigas -->
-
-
-<!--
-==============================================
-KOPSAVILKUMS - LAPAS STRUKTŪRA:
-==============================================
-
-1. HEADER (augšā)
-   └── Logo (Vārds Uzvārds) + Menu saites
-
-2. MAIN (vidus)
-   ├── HERO sekcija
-   │   └── Liels virsraksts + apraksts
-   └── PORTFOLIO sekcija
-       └── 3 projektu kartītes
-           ├── Attēla vieta
-           ├── Nosaukums
-           └── Apraksts
-
-3. FOOTER (apakšā)
-   └── Copyright + Sociālās saites
-
-==============================================
-KO MAINĪT:
-==============================================
-
-✏️  Rinda 14: Tavs vārds
-✏️  Rinda 27: Hero virsraksts
-✏️  Rinda 28: Hero apraksts
-✏️  Rinda 40-42: Projekts 1 info
-✏️  Rinda 49-51: Projekts 2 info
-✏️  Rinda 58-60: Projekts 3 info
-✏️  Rinda 71: Copyright vārds
-✏️  Rinda 75-79: Sociālo saišu URL
-==============================================
--->
-
-
