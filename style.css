@@ -86,40 +86,41 @@ a {
   position: relative;
 }
 
-/* --- DESKTOP: floating dropdown using fixed positioning to avoid clipping --- */
+/* --- DESKTOP: fixed left/right dropdowns, no clipping --- */
 @media (min-width: 768px) {
   .dropdown-menu {
-    position: fixed;          /* not constrained by sidebar overflow */
-    background: rgb(255, 255, 255);     /* solid dark purple background – fully opaque */
-    backdrop-filter: none;
- 
-    font-size: 0.85rem;
-    color: #fff;
-    line-height: 1.45;
-    padding: 0.7rem 1.2rem;
-   /* border-radius: 14px;*/
+    position: fixed;
+    background: #ffffff;
+
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.5;
+    padding: 0.9rem 1.2rem;
+    border-radius: 14px;
     white-space: normal;
     display: none;
-    z-index: 9999;           /* on top of everything */
-    /*box-shadow: 0 8px 20px rgba(0,0,0,0.2); */
-    max-width: 260px;
+    z-index: 9999;
+    /* box-shadow: 0 8px 20px rgba(0,0,0,0.25);*/
+    max-width: 60px;
+    width: max-content;
     pointer-events: auto;
-    transition: opacity 0.1s;
+  }
+
+  /* About dropdown: left side */
+  #about-dropdown {
+    left: 24px;
+    top: 180px;   /* adjust as needed */
+  }
+
+  /* Contact dropdown: right side */
+  #contact-dropdown {
+    right: 240px;
+    top: 780px;   /* adjust as needed */
   }
 
   .dropdown-menu p {
     margin: 0;
     padding: 0;
-  }
-
-  /* no special flex on li – we'll position via JS later, but we keep simple */
-  .menu li {
-    position: relative;
-  }
-}
-
-  .dropdown-toggle {
-    display: inline-block;
   }
 }
 

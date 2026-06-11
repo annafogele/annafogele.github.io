@@ -39,8 +39,9 @@
       <li>
         <a href="#" class="dropdown-toggle" id="contactToggleBtn" onclick="toggleContactMenu(event)">Contact</a>
         <div id="contact-dropdown" class="dropdown-menu" style="display: none;">
-          <p>anna.fogele/e.10@gmail.com<br>+371 2743667754</p>
-        </div>
+       <span id="contact-email" style="cursor: pointer;">anna.fogele/e.10@gmail.com</span>
+     <span id="copy-feedback" style="font-size: 0.7rem; margin-left: 8px; opacity: 0; transition: opacity 0.2s;">✓ copied!</span>
+</div>
       </li>
     </ul>
   </aside>
@@ -180,140 +181,97 @@
 <a href="#" id="top">// BACK TO TOP BUTTON //</a> 
 
 <script>
-  // Dynamic positioning for desktop dropdowns (floating, not clipped)
-function positionDropdown(dropdown, triggerElement) {
-  if (window.innerWidth < 768) return; // only on desktop
-  const rect = triggerElement.getBoundingClientRect();
-  dropdown.style.position = 'fixed';
-  dropdown.style.left = (rect.right + 8) + 'px';   // 8px to the right of the word
-  dropdown.style.top = (rect.top - 4) + 'px';      // align vertically with the word
-  dropdown.style.margin = '0';
+// ========== IMAGE MODAL (unchanged) ==========
+function openImageModal(src, alt) {
+  const modal = document.getElementById('image-modal');
+  const img = document.getElementById('modal-image');
+  img.src = src;
+  img.alt = alt;
+  modal.style.display = 'flex';
 }
 
-// Override the toggle functions to also position the dropdown
-const originalToggleAbout = toggleAboutMenu;
-const originalToggleContact = toggleContactMenu;
-
-window.toggleAboutMenu = function(event) {
-  event.preventDefault();
-  const dropdown = document.getElementById('about-dropdown');
-  const isOpen = dropdown.style.display === 'block';
-  // close all others
-  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
-  if (!isOpen) {
-    positionDropdown(dropdown, event.currentTarget);
-    dropdown.style.display = 'block';
-  } else {
-    dropdown.style.display = 'none';
-  }
+function closeImageModal() {
+  document.getElementById('image-modal').style.display = 'none';
+  document.getElementById('modal-image').src = '';
 }
 
-window.toggleContactMenu = function(event) {
-  event.preventDefault();
-  const dropdown = document.getElementById('contact-dropdown');
-  const isOpen = dropdown.style.display === 'block';
-  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
-  if (!isOpen) {
-    positionDropdown(dropdown, event.currentTarget);
-    dropdown.style.display = 'block';
-  } else {
-    dropdown.style.display = 'none';
-  }
-}
-
-// Also reposition on window resize (close dropdowns to avoid wrong positions)
-window.addEventListener('resize', function() {
-  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+document.getElementById('image-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeImageModal();
 });
 
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeImageModal();
+});
 
-
-
-  // MODAL (unchanged but fixed zoom interaction)
-  function openImageModal(src, alt) {
-    const modal = document.getElementById('image-modal');
-    const img = document.getElementById('modal-image');
-    img.src = src;
-    img.alt = alt;
-    modal.style.display = 'flex';
-  }
-
-  function closeImageModal() {
-    document.getElementById('image-modal').style.display = 'none';
-    document.getElementById('modal-image').src = '';
-  }
-
-  document.getElementById('image-modal').addEventListener('click', function(e) {
-    if (e.target === this) closeImageModal();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeImageModal();
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.proj-img-vert img').forEach(image => {
-      image.style.cursor = 'zoom-in';
-      image.addEventListener('click', e => {
-        e.stopPropagation();
-        openImageModal(e.currentTarget.src, e.currentTarget.alt);
-      });
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.proj-img-vert img').forEach(image => {
+    image.style.cursor = 'zoom-in';
+    image.addEventListener('click', e => {
+      e.stopPropagation();
+      openImageModal(e.currentTarget.src, e.currentTarget.alt);
     });
   });
+});
 
-  // DROPDOWN TOGGLE: FLOATING NEXT TO WORD (DESKTOP) / ORIGINAL MOBILE STYLE (unchanged for mobile)
-  // The behaviour: click same word again toggles off, clicking outside closes
-  // For desktop (min-width: 768px) the menu floats next to the clicked word (via CSS)
-  // Mobile version retains exact previous dropdown style and position.
+// ========== DROPDOWNS: About on left, Contact on right ==========
+function toggleAboutMenu(event) {
+  event.preventDefault();
+  const about = document.getElementById('about-dropdown');
+  const contact = document.getElementById('contact-dropdown');
+  const isOpen = about.style.display === 'block';
+  // close the other one
+  contact.style.display = 'none';
+  // toggle this one
+  about.style.display = isOpen ? 'none' : 'block';
+}
 
-  function toggleAboutMenu(event) {
-    event.preventDefault();
-    toggleDropdown(document.getElementById('about-dropdown'));
+function toggleContactMenu(event) {
+  event.preventDefault();
+  const about = document.getElementById('about-dropdown');
+  const contact = document.getElementById('contact-dropdown');
+  const isOpen = contact.style.display === 'block';
+  about.style.display = 'none';
+  contact.style.display = isOpen ? 'none' : 'block';
+}
+
+// Click outside closes any open dropdown
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.menu li')) {
+    document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
   }
+});
 
-  function toggleContactMenu(event) {
-    event.preventDefault();
-    toggleDropdown(document.getElementById('contact-dropdown'));
-  }
+// Prevent closing when clicking inside dropdown content itself
+document.querySelectorAll('.dropdown-menu').forEach(menu => {
+  menu.addEventListener('click', (e) => e.stopPropagation());
+});
+// Make email copyable with "copied!" feedback
+const emailSpan = document.getElementById('contact-email');
+const feedbackSpan = document.getElementById('copy-feedback');
 
-  function toggleDropdown(dropdown) {
-    if (!dropdown) return;
-    // if dropdown is open -> close it, else close all others then open this one
-    const isOpen = dropdown.style.display === 'block';
-    // close all dropdowns first
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-      menu.style.display = 'none';
-    });
-    // if it wasn't open, open it now
-    if (!isOpen) {
-      dropdown.style.display = 'block';
-    }
-    // else it stays closed
-  }
-
-  // Click outside: hide any open dropdown menus
-  document.addEventListener('click', function(e) {
-    // if click is inside a menu li (About/Contact area) we let the toggle handle it,
-    // but we need to avoid closing immediately after toggle.
-    // The toggle already manages the state; we only want to close if user clicks 
-    // something that is NOT part of any dropdown toggle area.
-    const isToggleArea = e.target.closest('.menu li');
-    if (!isToggleArea) {
-      document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
-    }
+if (emailSpan) {
+  emailSpan.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const email = emailSpan.innerText.trim();
+    navigator.clipboard.writeText(email).then(() => {
+      // Show "copied!" briefly
+      feedbackSpan.style.opacity = '1';
+      setTimeout(() => {
+        feedbackSpan.style.opacity = '0';
+      }, 1000);
+    }).catch(err => console.warn('Copy failed:', err));
   });
+}
+// ========== BACK TO TOP BUTTON FADE ==========
+window.addEventListener('scroll', () => {
+  const topBtn = document.getElementById('top');
+  if (topBtn) {
+    topBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
+  }
 
-  // Back to top button fade effect
-  window.addEventListener('scroll', () => {
-    const topBtn = document.getElementById('top');
-    if (topBtn) {
-      topBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
-    }
-  });
 
   // Optional: prevent event bubbling from dropdown content clicks to avoid global close
-  document.querySelectorAll('.dropdown-menu').forEach(menu => {
-    menu.addEventListener('click', (e) => e.stopPropagation());
+
   });
 </script>
 </body>
