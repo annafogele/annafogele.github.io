@@ -2,7 +2,7 @@
 <html lang="lv">
 <head>
   <meta charset="UTF-8">
- <meta name="google-site-verification" content="Wlq3qAAF2EmN-ogofUCBIltF5YPpo65VdPgEthYdexg" />
+  <meta name="google-site-verification" content="Wlq3qAAF2EmN-ogofUCBIltF5YPpo65VdPgEthYdexg" />
   <meta name="author" content="Anna Fogele">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anna Fogele</title>
@@ -10,238 +10,311 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♡</text></svg>">
+  <style>
+    /* quick inline fix for modal + any extra safeness — main styles are in style.css */
+    .image-modal { transition: background 0.2s; }
+  </style>
 </head>
-
 <body>
 
 <div class="banner" style="position: fixed; top: 30px; left: 0; width: 100%; overflow: hidden; white-space: nowrap; pointer-events: none; z-index: 10; color: #000000c0; font-size: 0.6rem; letter-spacing: 1px; font-family: Arial, sans-serif; font-weight: bold;">
- <div class="banner-track" style="display: inline-block; animation: scrollBanner 30s linear infinite;">
-  <span>I thought about you yesterday and I'll be with you tomorrow but for now I'm set to be trapped in the in-between of whatever there may be well i love me you there is not much more than all there ever was and all there ever will be but for now I'm set to be trapped by the what that is or whatever there may be oh well i love me you still &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>I thought about you yesterday and I'll be with you tomorrow but for now I'm set to be trapped in the in-between of whatever there may be well i love me you there is not much more than all there ever was and all there ever will be but for now I'm set to be trapped by the what that is or whatever there may be oh well i love me you still &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-</div>
-</div>
-
-  <div class="site">
-
-    <aside class="sidebar">
-      <img src="portfolkoio materia;/anna_fogele_galva1.gif" alt="" class="sidebar-gif">
-      <h1 class="name">Anna Fogele</h1>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li>
-          <a href="#" class="dropdown-toggle" onclick="toggleAboutMenu(event)">About</a>
-          <div id="about-dropdown" class="dropdown-menu" style="display: none;">
-            <p>Multimedial girl from Riga, Latvia.
-              <br>Based in the here and now, on my way forever.
-            </p>
-          </div>
-        </li>
-        <li>
-          <a href="#" class="dropdown-toggle" onclick="toggleContactMenu(event)">Contact</a>
-          <div id="contact-dropdown" class="dropdown-menu" style="display: none;">
-            <p>anna.fogele/e.10@gmail.com<br>+371 2743667754</p>
-          </div>
-        </li>
-      </ul>
-    </aside>
-
-    <main class="content">
-      <h2 class="section-title">works</h2>
-      <div class="project">
-        <div class="video-wrap"> 
-          <iframe src="https://player.mediadelivery.net/embed/666391/cc5a23eb-e67d-48ab-a052-fd097f337727?autoplay=false&loop=true&muted=true&preload=true&responsive=true" 
-          loading="lazy" 
-          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
-          allowfullscreen="true"></iframe></div>
-        <h3>Average internet experience b like</h3>
-        <p>Gaze-reactive digital artwork, 2026</p>
-      </div>
-
-  <div class="project">
-        <div class="proj-img-vert">
-          <img src="images/1233.jpeg" alt=😌🌀>
-          <img src="portfolkoio materia;/berlinizstad/mazaks/8.jpg" alt="💪">
-          <img src="portfolkoio materia;/berlinizstad/MPNS1936.jpg" alt="🌀👨‍🦰🧧🦊">
-        </div>
-        <h3>JJARDIN / RUEGO</h3>
-        <p>Group show/event, 2025</p>
-      </div>
-
-      <div class="project">
-        <div class="video-wrap"> 
-          <iframe src="https://player.mediadelivery.net/embed/666391/ffa139ea-516d-4a44-ab79-b811ef5f37c0?autoplay=false&loop=true&muted=false&preload=true&responsive=true" 
-          loading="lazy" 
-          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
-          allowfullscreen="true"></iframe></div>
-        <div class="proj-img-vert">
-          <img src="images/d1.jpg" alt="😴💤😵">
-          <img src="images/d2.jpg" alt="👻🌸☁️">
-          <img src="images/d3.jpg" alt="👻🎵🎤">
-          <img src="images/d4.jpg" alt="🕸️💾👻">
-        </div>
-        <h3>Ghost of a summers past</h3>
-        <p>Photo/Video, 2025</p>
-      </div>
-      
-<div class="project">
-  <div class="video-wrap"> 
-  <iframe src="https://player.mediadelivery.net/embed/666391/c0132cd7-c5d9-490f-a298-19caf361d60a?autoplay=false&loop=true&muted=false&preload=true&responsive=true" 
-  loading="lazy" 
-  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
-  allowfullscreen="true"></iframe>
+  <div class="banner-track" style="display: inline-block; animation: scrollBanner 30s linear infinite;">
+    <span>I thought about you yesterday and I'll be with you tomorrow but for now I'm set to be trapped in the in-between of whatever there may be well i love me you there is not much more than all there ever was and all there ever will be but for now I'm set to be trapped by the what that is or whatever there may be oh well i love me you still &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>I thought about you yesterday and I'll be with you tomorrow but for now I'm set to be trapped in the in-between of whatever there may be well i love me you there is not much more than all there ever was and all there ever will be but for now I'm set to be trapped by the what that is or whatever there may be oh well i love me you still &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   </div>
-   <h3>Spanish guy - longest skit</h3>
-   <p>Music video, 2025</p>
-
 </div>
 
-      <div class="project">
-        <div class="proj-img-vert">
-          <img src="images/thumbnail.jpg" alt="thumbnail">
-        </div>
-        <h3>How far can i run?</h3>
-        <p>Video, 2024</p>
-      </div>
+<div class="site">
 
-  <div class="project">
+  <aside class="sidebar">
+    <img src="portfolkoio materia;/anna_fogele_galva1.gif" alt="" class="sidebar-gif">
+    <h1 class="name">Anna Fogele</h1>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#" class="dropdown-toggle" id="aboutToggleBtn" onclick="toggleAboutMenu(event)">About</a>
+        <div id="about-dropdown" class="dropdown-menu" style="display: none;">
+          <p>Multimedial girl from Riga, Latvia.<br>Based in the here and now, on my way forever.</p>
+        </div>
+      </li>
+      <li>
+        <a href="#" class="dropdown-toggle" id="contactToggleBtn" onclick="toggleContactMenu(event)">Contact</a>
+        <div id="contact-dropdown" class="dropdown-menu" style="display: none;">
+          <p>anna.fogele/e.10@gmail.com<br>+371 2743667754</p>
+        </div>
+      </li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <h2 class="section-title">works</h2>
+    <div class="project">
       <div class="video-wrap"> 
-          <iframe src="https://player.mediadelivery.net/embed/666391/d7bafae6-3467-43a3-9f8c-85db0e4662f5?autoplay=false&loop=true&muted=true&preload=true&responsive=true" 
-          loading="lazy" 
-           allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
-          allowfullscreen="true"></iframe>
-        </div>
-        <h3>Test 1-2-3</h3>
-        <p>Video for DJ set, 2025</p>
+        <iframe src="https://player.mediadelivery.net/embed/666391/cc5a23eb-e67d-48ab-a052-fd097f337727?autoplay=false&loop=true&muted=true&preload=true&responsive=true" 
+        loading="lazy" 
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
+        allowfullscreen="true"></iframe>
       </div>
+      <h3>Average internet experience b like</h3>
+      <p>Gaze-reactive digital artwork, 2026</p>
+    </div>
 
- <div class="project">
-        <div class="proj-img-vert">
-          
-          <img src="images/elza.jpg" alt="👼☁️🕊️✨🤍">
-          style="border:0;position:absolute;top:0;height:100%;width:100%;"
-        </div>
-        <h3>Angel Elza</h3>
-        <p>Digital photography, 2024</p>
+    <div class="project">
+      <div class="proj-img-vert">
+        <img src="images/1233.jpeg" alt="😌🌀">
+        <img src="portfolkoio materia;/berlinizstad/mazaks/8.jpg" alt="💪">
+        <img src="portfolkoio materia;/berlinizstad/MPNS1936.jpg" alt="🌀👨‍🦰🧧🦊">
       </div>
+      <h3>JJARDIN / RUEGO</h3>
+      <p>Group show/event, 2025</p>
+    </div>
 
-      <div class="project">
-        <div class="proj-img-vert">
-          <img src="images/emo downscaled33.jpg" alt="😵‍💫✨🔡">
-        </div>
-        <h3>E - emo Latvija</h3>
-        <p>Digital graphics, 2024</p>
+    <div class="project">
+      <div class="video-wrap"> 
+        <iframe src="https://player.mediadelivery.net/embed/666391/ffa139ea-516d-4a44-ab79-b811ef5f37c0?autoplay=false&loop=true&muted=false&preload=true&responsive=true" 
+        loading="lazy" 
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
+        allowfullscreen="true"></iframe>
       </div>
-
-      <div class="project">
-        <div class="proj-img-vert">
-          <img src="images/asaru-krelles.jpg" alt="😭🤭">
-        </div>
-        <h3>Letiņu sekss</h3>
-        <p>Digital graphics, 2024</p>
+      <div class="proj-img-vert">
+        <img src="images/d1.jpg" alt="😴💤😵">
+        <img src="images/d2.jpg" alt="👻🌸☁️">
+        <img src="images/d3.jpg" alt="👻🎵🎤">
+        <img src="images/d4.jpg" alt="🕸️💾👻">
       </div>
+      <h3>Ghost of a summers past</h3>
+      <p>Photo/Video, 2025</p>
+    </div>
       
- <div class="project">
-        <div class="video-container">
-          <iframe width="560" 
-          height="315" src="https://www.youtube.com/embed/SZG2uHr6uJM?si=3PIgw6CjjeB_s6Qc" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write;
-           encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <h3>Dzirnavu iela 24</h3>
-        <p>Stop motion animation, 2022</p>
+    <div class="project">
+      <div class="video-wrap"> 
+        <iframe src="https://player.mediadelivery.net/embed/666391/c0132cd7-c5d9-490f-a298-19caf361d60a?autoplay=false&loop=true&muted=false&preload=true&responsive=true" 
+        loading="lazy" 
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
+        allowfullscreen="true"></iframe>
       </div>
+      <h3>Spanish guy - longest skit</h3>
+      <p>Music video, 2025</p>
+    </div>
 
-<div class="project">
-<div class="video-wrap"> 
-  <iframe src="https://player.mediadelivery.net/embed/666391/b43e16bb-3eb7-4068-a13f-a259c1a30b4b?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
-  loading="lazy" 
-  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
-  allowfullscreen="true"></iframe>
+    <div class="project">
+      <div class="proj-img-vert">
+        <img src="images/thumbnail.jpg" alt="thumbnail">
       </div>
-        <h3>RIGA///I FILM MY FRIENDS</h3>
-        <p>High School diploma work, 2022</p>
+      <h3>How far can i run?</h3>
+      <p>Video, 2024</p>
+    </div>
+
+    <div class="project">
+      <div class="video-wrap"> 
+        <iframe src="https://player.mediadelivery.net/embed/666391/d7bafae6-3467-43a3-9f8c-85db0e4662f5?autoplay=false&loop=true&muted=true&preload=true&responsive=true" 
+        loading="lazy" 
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
+        allowfullscreen="true"></iframe>
       </div>
+      <h3>Test 1-2-3</h3>
+      <p>Video for DJ set, 2025</p>
+    </div>
 
-     
-      <footer class="footer">
-        <p>&copy; 2026 Anna Fogele</p>
-        <div class="social">
-          <a href="https://www.instagram.com/mudzis/">Instagram</a>
-          <a href="https://www.youtube.com/@ann-03">Youtube</a>
-          <a href="https://soundcloud.com/meitene2002">Soundcloud</a>
-        </div>
-      </footer>
-    </main>
+    <!-- fixed glitch: removed stray inline style text -->
+    <div class="project">
+      <div class="proj-img-vert">
+        <img src="images/elza.jpg" alt="👼☁️🕊️✨🤍">
+      </div>
+      <h3>Angel Elza</h3>
+      <p>Digital photography, 2024</p>
+    </div>
 
-  </div>
+    <div class="project">
+      <div class="proj-img-vert">
+        <img src="images/emo downscaled33.jpg" alt="😵‍💫✨🔡">
+      </div>
+      <h3>E - emo Latvija</h3>
+      <p>Digital graphics, 2024</p>
+    </div>
 
- <div id="image-modal" class="image-modal" style="display: none;">
+    <div class="project">
+      <div class="proj-img-vert">
+        <img src="images/asaru-krelles.jpg" alt="😭🤭">
+      </div>
+      <h3>Letiņu sekss</h3>
+      <p>Digital graphics, 2024</p>
+    </div>
+      
+    <div class="project">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SZG2uHr6uJM?si=3PIgw6CjjeB_s6Qc" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <h3>Dzirnavu iela 24</h3>
+      <p>Stop motion animation, 2022</p>
+    </div>
+
+    <div class="project">
+      <div class="video-wrap"> 
+        <iframe src="https://player.mediadelivery.net/embed/666391/b43e16bb-3eb7-4068-a13f-a259c1a30b4b?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
+        loading="lazy" 
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
+        allowfullscreen="true"></iframe>
+      </div>
+      <h3>RIGA///I FILM MY FRIENDS</h3>
+      <p>High School diploma work, 2022</p>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Anna Fogele</p>
+      <div class="social">
+        <a href="https://www.instagram.com/mudzis/">Instagram</a>
+        <a href="https://www.youtube.com/@ann-03">Youtube</a>
+        <a href="https://soundcloud.com/meitene2002">Soundcloud</a>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<div id="image-modal" class="image-modal" style="display: none;">
   <img id="modal-image" src="" alt="Full view" onclick="closeImageModal()">
 </div>
 
-  <a href="#" id="top">// BACK TO TOP BUTTON //</a> 
- 
+<a href="#" id="top">// BACK TO TOP BUTTON //</a> 
 
-  <script>
-    // MODAL
-    
-    function openImageModal(src, alt) {
-      const modal = document.getElementById('image-modal');
-      const img = document.getElementById('modal-image');
-      img.src = src;
-      img.alt = alt;
-      modal.style.display = 'flex';
-    }
-
-    function closeImageModal() {
-      document.getElementById('image-modal').style.display = 'none';
-      document.getElementById('modal-image').src = '';
-    }
-
-    document.getElementById('image-modal').addEventListener('click', function(e) {
-      if (e.target === this) closeImageModal();
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeImageModal();
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.proj-img-vert img').forEach(image => {
-        image.style.cursor = 'zoom-in';
-        image.addEventListener('click', e => {
-          e.stopPropagation();
-          openImageModal(e.currentTarget.src, e.currentTarget.alt);
-        });
-      });
-    });
-
-    // DROPDOWNS
-    function toggleAboutMenu(event) {
-      event.preventDefault();
-      toggleDropdown(document.getElementById('about-dropdown'));
-    }
-
-    function toggleContactMenu(event) {
-      event.preventDefault();
-      toggleDropdown(document.getElementById('contact-dropdown'));
-    }
-function toggleDropdown(dropdown) {
-  const isOpen = dropdown.style.display === 'block';
-  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
-  dropdown.style.display = isOpen ? 'none' : 'block';
+<script>
+  // Dynamic positioning for desktop dropdowns (floating, not clipped)
+function positionDropdown(dropdown, triggerElement) {
+  if (window.innerWidth < 768) return; // only on desktop
+  const rect = triggerElement.getBoundingClientRect();
+  dropdown.style.position = 'fixed';
+  dropdown.style.left = (rect.right + 8) + 'px';   // 8px to the right of the word
+  dropdown.style.top = (rect.top - 4) + 'px';      // align vertically with the word
+  dropdown.style.margin = '0';
 }
 
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.menu li')) {
-    document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+// Override the toggle functions to also position the dropdown
+const originalToggleAbout = toggleAboutMenu;
+const originalToggleContact = toggleContactMenu;
+
+window.toggleAboutMenu = function(event) {
+  event.preventDefault();
+  const dropdown = document.getElementById('about-dropdown');
+  const isOpen = dropdown.style.display === 'block';
+  // close all others
+  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+  if (!isOpen) {
+    positionDropdown(dropdown, event.currentTarget);
+    dropdown.style.display = 'block';
+  } else {
+    dropdown.style.display = 'none';
   }
+}
+
+window.toggleContactMenu = function(event) {
+  event.preventDefault();
+  const dropdown = document.getElementById('contact-dropdown');
+  const isOpen = dropdown.style.display === 'block';
+  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+  if (!isOpen) {
+    positionDropdown(dropdown, event.currentTarget);
+    dropdown.style.display = 'block';
+  } else {
+    dropdown.style.display = 'none';
+  }
+}
+
+// Also reposition on window resize (close dropdowns to avoid wrong positions)
+window.addEventListener('resize', function() {
+  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
 });
 
-    window.addEventListener('scroll', () => {
-      document.getElementById('top').style.opacity = window.scrollY > 300 ? '1' : '0';
+
+
+
+  // MODAL (unchanged but fixed zoom interaction)
+  function openImageModal(src, alt) {
+    const modal = document.getElementById('image-modal');
+    const img = document.getElementById('modal-image');
+    img.src = src;
+    img.alt = alt;
+    modal.style.display = 'flex';
+  }
+
+  function closeImageModal() {
+    document.getElementById('image-modal').style.display = 'none';
+    document.getElementById('modal-image').src = '';
+  }
+
+  document.getElementById('image-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeImageModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeImageModal();
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.proj-img-vert img').forEach(image => {
+      image.style.cursor = 'zoom-in';
+      image.addEventListener('click', e => {
+        e.stopPropagation();
+        openImageModal(e.currentTarget.src, e.currentTarget.alt);
+      });
     });
-  </script>
+  });
+
+  // DROPDOWN TOGGLE: FLOATING NEXT TO WORD (DESKTOP) / ORIGINAL MOBILE STYLE (unchanged for mobile)
+  // The behaviour: click same word again toggles off, clicking outside closes
+  // For desktop (min-width: 768px) the menu floats next to the clicked word (via CSS)
+  // Mobile version retains exact previous dropdown style and position.
+
+  function toggleAboutMenu(event) {
+    event.preventDefault();
+    toggleDropdown(document.getElementById('about-dropdown'));
+  }
+
+  function toggleContactMenu(event) {
+    event.preventDefault();
+    toggleDropdown(document.getElementById('contact-dropdown'));
+  }
+
+  function toggleDropdown(dropdown) {
+    if (!dropdown) return;
+    // if dropdown is open -> close it, else close all others then open this one
+    const isOpen = dropdown.style.display === 'block';
+    // close all dropdowns first
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.style.display = 'none';
+    });
+    // if it wasn't open, open it now
+    if (!isOpen) {
+      dropdown.style.display = 'block';
+    }
+    // else it stays closed
+  }
+
+  // Click outside: hide any open dropdown menus
+  document.addEventListener('click', function(e) {
+    // if click is inside a menu li (About/Contact area) we let the toggle handle it,
+    // but we need to avoid closing immediately after toggle.
+    // The toggle already manages the state; we only want to close if user clicks 
+    // something that is NOT part of any dropdown toggle area.
+    const isToggleArea = e.target.closest('.menu li');
+    if (!isToggleArea) {
+      document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+    }
+  });
+
+  // Back to top button fade effect
+  window.addEventListener('scroll', () => {
+    const topBtn = document.getElementById('top');
+    if (topBtn) {
+      topBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
+    }
+  });
+
+  // Optional: prevent event bubbling from dropdown content clicks to avoid global close
+  document.querySelectorAll('.dropdown-menu').forEach(menu => {
+    menu.addEventListener('click', (e) => e.stopPropagation());
+  });
+</script>
 </body>
 </html>

@@ -17,7 +17,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  user-select: none; /*	Prevents users from selecting text */ 
+  user-select: none;
 }
 
 @keyframes driftHearts {
@@ -31,41 +31,35 @@ a {
 
 /* ===== LAYOUT ===== */
 .site {
-  /* sets up the main layout as a flex container, holding both the sidebar and content area. */
   max-width: 800px;
   margin: 4rem auto 0;
   display: flex;
- /*  In a flex container, this tells the browser how to distribute available space. 
-  flex:1 takes 1 part, flex:4 takes 4 parts. */
-  align-items: flex-start; /* needed for sticky sidebar */
+  align-items: flex-start;
   width: 100%;
 }
 
 /* ===== SIDEBAR ===== */
 .sidebar {
   flex: 1;
-  position: sticky; /*paliek uz ekrána skrollojot */
-  top: 0; /*	Sticky element will stick to the top edge.*/
+  position: sticky;
+  top: 0;
   height: 100vh;
-  overflow-y: auto; /*Adds a vertical scrollbar only if content is taller than the sidebar.*/
-  overflow-x: hidden; /* prevents horizontal scroll from any wide content */
-  display: flex; /* gives it a base width within .site flex container*/
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* changed from center */
-  padding: 35vh 2rem 2rem; /* top padding pushes content down visually */
-  /* border-right: 0.5px solid #1d1c1d; */
+  justify-content: flex-start;
+  padding: 35vh 2rem 2rem;
   background: #fff;
   scrollbar-width: none;
 }
 
-/* ===== GIF above name — desktop only ===== */
 .sidebar-gif {
-  width: 197px;
-  height: 197px;
+  width: 97px;
+  height: 97px;
   object-fit: cover;
   display: block;
   margin-bottom: 1.5rem;
-  
 }
 
 .name,
@@ -92,23 +86,73 @@ a {
   position: relative;
 }
 
-.dropdown-menu {
-  position: static;
-  margin-top: 0.5rem;
-  padding: 0.8rem;
-  background: #736b9470;
-  font-family: Arial, monospace;
-  font-size: 0.9rem;
-  color: #fff;
-  line-height: 1.5;
-  white-space: normal;
-  display: none;
-  z-index: 20;
+/* --- DESKTOP: floating dropdown using fixed positioning to avoid clipping --- */
+@media (min-width: 768px) {
+  .dropdown-menu {
+    position: fixed;          /* not constrained by sidebar overflow */
+    background: rgb(255, 255, 255);     /* solid dark purple background – fully opaque */
+    backdrop-filter: none;
+ 
+    font-size: 0.85rem;
+    color: #fff;
+    line-height: 1.45;
+    padding: 0.7rem 1.2rem;
+   /* border-radius: 14px;*/
+    white-space: normal;
+    display: none;
+    z-index: 9999;           /* on top of everything */
+    /*box-shadow: 0 8px 20px rgba(0,0,0,0.2); */
+    max-width: 260px;
+    pointer-events: auto;
+    transition: opacity 0.1s;
+  }
+
+  .dropdown-menu p {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* no special flex on li – we'll position via JS later, but we keep simple */
+  .menu li {
+    position: relative;
+  }
 }
 
-.dropdown-menu p {
-  margin: 0;
-  padding: 0;
+  .dropdown-toggle {
+    display: inline-block;
+  }
+}
+
+/* --- MOBILE: original dropdown style (below the word, full width) --- */
+@media (max-width: 767px) {
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    width: 220px;
+    margin-top: 0.5rem;
+    background: #736b9470;
+    font-family: Arial, monospace;
+    font-size: 0.9rem;
+    color: #fff;
+    line-height: 1.5;
+    padding: 0.8rem 1rem;
+    white-space: normal;
+    display: none;
+    z-index: 20;
+    border-radius: 8px;
+  }
+
+  .dropdown-menu p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin-bottom: 1.1rem;
+    position: relative;
+  }
 }
 
 .menu a {
@@ -128,10 +172,9 @@ a {
   cursor: pointer;
 }
 
-/* ===== CONTENT — natural page scroll now ===== */
+/* ===== CONTENT ===== */
 .content {
-  flex: 4; /* defines relative width of main content area
-  compared to the sidebar (4:1 if 4 etc)*/
+  flex: 4;
   padding: 2rem 0.5rem 3rem 2rem;
 }
 
@@ -180,10 +223,12 @@ a {
   margin-bottom: 1.25rem;
   color: #d0d0ce;
 }
+
 .video-wrap {
   position: relative;
   padding-top: 56.25%;
 }
+
 .video-wrap iframe {
   position: absolute;
   top: 0;
@@ -297,7 +342,8 @@ a {
   object-fit: contain;
   display: block;
 }
- .video-container {
+
+.video-container {
   position: relative;
   width: 100%;
   padding-top: 56.25%;
@@ -311,7 +357,8 @@ a {
   width: 100%;
   height: 100%;
 }
-/* ===== MOBILE / NARROW ===== */
+
+/* ===== MOBILE / NARROW (unchanged) ===== */
 @media (max-width: 767px) {
   .site {
     width: 100%;
@@ -356,15 +403,17 @@ a {
     position: relative;
   }
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 220px;
-  margin: 0;
-  z-index: 100;
-  padding: 0.8rem 1.5rem;
-}
+  /* mobile: dropdown below the link (original) */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    width: 220px;
+    margin: 0;
+    z-index: 100;
+    padding: 0.8rem 1.5rem;
+  }
 
   .content {
     width: 100%;
