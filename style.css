@@ -49,7 +49,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 35vh 2rem 2rem;
+  padding: 35vh 0.8rem 2rem;
   background: #fff;
   scrollbar-width: none;
 }
@@ -68,7 +68,7 @@ a {
 }
 
 .name {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 100;
   letter-spacing: 0.025em;
   color: #000;
@@ -92,16 +92,16 @@ a {
     position: fixed;
     background: #ffffff;
 
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: #ffffff;
-    line-height: 1.5;
-    padding: 0.9rem 1.2rem;
-    border-radius: 14px;
+    line-height: 1.6;
+    padding: 1rem 1.2rem;
+    /* border-radius: 14px; */
     white-space: normal;
     display: none;
-    z-index: 9999;
+    z-index: 100;
     /* box-shadow: 0 8px 20px rgba(0,0,0,0.25);*/
-    max-width: 60px;
+    max-width: 100px;
     width: max-content;
     pointer-events: auto;
   }
@@ -109,13 +109,13 @@ a {
   /* About dropdown: left side */
   #about-dropdown {
     left: 24px;
-    top: 180px;   /* adjust as needed */
+    top: 390px;   /* adjust as needed */
   }
 
   /* Contact dropdown: right side */
   #contact-dropdown {
-    right: 240px;
-    top: 780px;   /* adjust as needed */
+    left: 700px;
+    top: 78px;   /* adjust as needed */
   }
 
   .dropdown-menu p {
@@ -133,16 +133,18 @@ a {
     right: auto;
     width: 220px;
     margin-top: 0.5rem;
-    background: #736b9470;
-    font-family: Arial, monospace;
-    font-size: 0.9rem;
-    color: #fff;
+   /* background: #736b9400; */
+    /*font-family: Arial, monospace;*/
+    font-size: 0.8rem;
+
+    color: #000000;
     line-height: 1.5;
     padding: 0.8rem 1rem;
     white-space: normal;
     display: none;
     z-index: 20;
-    border-radius: 8px;
+  /*border-radius: 8px;*/
+  
   }
 
   .dropdown-menu p {
