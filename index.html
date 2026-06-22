@@ -56,36 +56,42 @@
         allowfullscreen="true"></iframe>
       </div>
       <h3>Average internet experience b like</h3>
-      <p>Gaze-reactive digital artwork, 2026</p>
+      <p>Gaze-reactive digital artwork, 2025</p>
     </div>
 
     <div class="project">
       <div class="proj-img-vert">
         <img src="images/1233.jpeg" alt="😌🌀">
+        <img src="portfolkoio materia;/berlinizstad/MPNS1890.jpg" alt="🌀👨‍🦰🧧🦊">
         <!-- trīs attēli rindā (a, 8, b) -->
         <div class="three-row">
           <img src="portfolkoio materia;/berlinizstad/a.jpeg" alt="🌀👨‍🦰🧧🦊">
           <img src="portfolkoio materia;/berlinizstad/mazaks/8.jpg" alt="💪">
           <img src="portfolkoio materia;/berlinizstad/b.jpeg" alt="🌀👨‍🦰🧧🦊">
         </div>
-        <img src="portfolkoio materia;/berlinizstad/MPNS1936.jpg" alt="🌀👨‍🦰🧧🦊">
+        
       </div>
       <h3><a href="jjardin-ruego.html">JJARDIN / RUEGO</a></h3>
       <p>Group show/event, 2025</p>
     </div>
 
     <div class="project">
+            <div class="proj-img-vert">
+        <div class="two-row">
+        <img src="portfolkoio materia;/d1.jpg" alt="😴💤😵">
+        <img src="portfolkoio materia;/d2.jpg" alt="👻🌸☁️">
+        </div>
       <div class="video-wrap"> 
         <iframe src="https://player.mediadelivery.net/embed/666391/ffa139ea-516d-4a44-ab79-b811ef5f37c0?autoplay=false&loop=true&muted=false&preload=true&responsive=true" 
         loading="lazy" 
         allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
         allowfullscreen="true"></iframe>
       </div>
-      <div class="proj-img-vert">
-        <img src="images/d1.jpg" alt="😴💤😵">
-        <img src="images/d2.jpg" alt="👻🌸☁️">
-        <img src="images/d3.jpg" alt="👻🎵🎤">
-        <img src="images/d4.jpg" alt="🕸️💾👻">
+
+        <div class="two-row">
+        <img src="portfolkoio materia;/d3.jpg" alt="👻🎵🎤">
+        <img src="portfolkoio materia;/d4.jpg" alt="🕸️💾👻">
+        </div>
       </div>
       <h3>Ghost of a summers past</h3>
       <p>Photo/Video, 2025</p>
@@ -107,7 +113,7 @@
         <img src="images/thumbnail.jpg" alt="thumbnail">
       </div>
       <h3>How far can i run?</h3>
-      <p>Video, 2024</p>
+      <p>Video, 2025</p>
     </div>
 
     <div class="project">
@@ -118,7 +124,7 @@
         allowfullscreen="true"></iframe>
       </div>
       <h3>Test 1-2-3</h3>
-      <p>Video for DJ set, 2025</p>
+      <p>DJ set visuals, 2025</p>
     </div>
 
     <!-- fixed glitch: removed stray inline style text -->
@@ -181,24 +187,75 @@
 </div>
 
 <div id="image-modal" class="image-modal" style="display: none;">
+  <button id="modal-prev" class="modal-nav left" aria-label="Previous"></button>
   <img id="modal-image" src="" alt="Full view" onclick="closeImageModal()">
+  <button id="modal-next" class="modal-nav right" aria-label="Next"></button>
 </div>
 
 <a href="#" id="top">// BACK TO TOP BUTTON //</a> 
 
 <script>
-// ========== IMAGE MODAL (unchanged) ==========
-function openImageModal(src, alt) {
+// ========== IMAGE MODAL WITH PER-PROJECT NAVIGATION ==========
+function closeImageModal() {
   const modal = document.getElementById('image-modal');
+  modal.style.display = 'none';
   const img = document.getElementById('modal-image');
-  img.src = src;
-  img.alt = alt;
-  modal.style.display = 'flex';
+  img.src = '';
+  modal._group = null;
+  modal._index = null;
 }
 
-function closeImageModal() {
-  document.getElementById('image-modal').style.display = 'none';
-  document.getElementById('modal-image').src = '';
+function openImageModalFromElement(imgEl) {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-image');
+  const project = imgEl.closest('.project');
+  const imgs = project ? Array.from(project.querySelectorAll('.proj-img-vert img')) : [];
+  modal._group = imgs.map(i => i.src);
+  modal._index = imgs.indexOf(imgEl);
+  if (modal._index === -1) modal._index = 0;
+  modalImg.src = modal._group[modal._index] || imgEl.src;
+  modalImg.alt = imgEl.alt || '';
+  modal.style.display = 'flex';
+  updateNavButtons();
+}
+
+function showImageAt(index) {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-image');
+  if (!modal._group) return;
+  if (index < 0) index = 0;
+  if (index >= modal._group.length) index = modal._group.length - 1;
+  modal._index = index;
+  modalImg.src = modal._group[modal._index];
+}
+
+function nextImage() {
+  const modal = document.getElementById('image-modal');
+  if (!modal._group) return;
+  if (modal._index < modal._group.length - 1) {
+    showImageAt(modal._index + 1);
+  }
+}
+
+function prevImage() {
+  const modal = document.getElementById('image-modal');
+  if (!modal._group) return;
+  if (modal._index > 0) {
+    showImageAt(modal._index - 1);
+  }
+}
+
+function updateNavButtons() {
+  const modal = document.getElementById('image-modal');
+  const prev = document.getElementById('modal-prev');
+  const next = document.getElementById('modal-next');
+  if (!modal._group || modal._group.length <= 1) {
+    prev.style.display = 'none';
+    next.style.display = 'none';
+  } else {
+    prev.style.display = 'block';
+    next.style.display = 'block';
+  }
 }
 
 document.getElementById('image-modal').addEventListener('click', function(e) {
@@ -206,7 +263,12 @@ document.getElementById('image-modal').addEventListener('click', function(e) {
 });
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeImageModal();
+  const modal = document.getElementById('image-modal');
+  if (modal.style.display !== 'none') {
+    if (e.key === 'Escape') closeImageModal();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'ArrowRight') nextImage();
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -214,9 +276,15 @@ document.addEventListener('DOMContentLoaded', () => {
     image.style.cursor = 'zoom-in';
     image.addEventListener('click', e => {
       e.stopPropagation();
-      openImageModal(e.currentTarget.src, e.currentTarget.alt);
+      openImageModalFromElement(e.currentTarget);
     });
   });
+
+  // hook up modal nav buttons
+  const prevBtn = document.getElementById('modal-prev');
+  const nextBtn = document.getElementById('modal-next');
+  prevBtn.addEventListener('click', function(e) { e.stopPropagation(); prevImage(); });
+  nextBtn.addEventListener('click', function(e) { e.stopPropagation(); nextImage(); });
 });
 
 // ========== DROPDOWNS: About on left, Contact on right ==========
@@ -238,13 +306,12 @@ function toggleAboutMenu(event) {
   } else {
     const rect = event.currentTarget.getBoundingClientRect();
     if (window.innerWidth <= 767) {
-      // on mobile, let CSS handle placement (static in flow) so it pushes content down
-      about.style.position = '';
-      about.style.left = '';
-      about.style.right = '';
-      about.style.top = '';
-      about.style.transform = '';
-      about.style.zIndex = '';
+      // on mobile, keep the dropdown as absolute inside the li and center it under the link
+      about.style.position = 'absolute';
+      about.style.left = '50%';
+      about.style.transform = 'translateX(-50%)';
+      about.style.top = '100%';
+      about.style.zIndex = 300;
     } else {
       about.style.position = '';
       about.style.left = '';
@@ -272,12 +339,11 @@ function toggleContactMenu(event) {
   } else {
     const rect = event.currentTarget.getBoundingClientRect();
     if (window.innerWidth <= 767) {
-      // on mobile, use normal flow so dropdown pushes content
-      contact.style.position = '';
-      contact.style.left = '';
-      contact.style.right = '';
-      contact.style.top = '';
-      contact.style.zIndex = '';
+      contact.style.position = 'fixed';
+      contact.style.left = '8px';
+      contact.style.right = '8px';
+      contact.style.top = (rect.bottom + 6) + 'px';
+      contact.style.zIndex = 300;
     } else {
       contact.style.position = 'fixed';
       contact.style.left = rect.left + 'px';

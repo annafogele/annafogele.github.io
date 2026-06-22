@@ -49,7 +49,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 35vh 0.8rem 2rem;
+  padding: 35vh 0.4rem 0.4rem 0.4rem;
   background: #fff;
   scrollbar-width: none;
 }
@@ -68,7 +68,7 @@ a {
 }
 
 .name {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 100;
   letter-spacing: 0.025em;
   color: #000;
@@ -90,8 +90,6 @@ a {
 @media (min-width: 768px) {
   .dropdown-menu {
     position: fixed;
-    background: #ffffff;
-
     font-size: 0.75rem;
     color: #ffffff;
     line-height: 1.6;
@@ -102,7 +100,7 @@ a {
     z-index: 100;
     /* box-shadow: 0 8px 20px rgba(0,0,0,0.25);*/
     max-width: 130px;
-    width: max-content;
+    width: 8%;
     pointer-events: auto;
   }
 
@@ -391,6 +389,26 @@ a {
   object-fit: contain;
   display: block;
 }
+
+/* Modal nav buttons */
+.modal-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  background: transparent;
+  border: none;
+  color: transparent;
+  display: block;
+  z-index: 1000;
+  cursor: default;
+  outline: none;
+}
+
+.modal-nav.left { left: 0; }
+.modal-nav.right { right: 0; }
+
+.modal-nav:focus { outline: none; }
 
 .video-container {
   position: relative;
