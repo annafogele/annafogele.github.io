@@ -59,7 +59,10 @@
           <img src="portfolkoio materia;/berlinizstad/mazaks/8.jpg" alt="💪">
           <img src="portfolkoio materia;/berlinizstad/b.jpeg" alt="🌀👨‍🦰🧧🦊">
         </div>
-       <img src="portfolkoio materia;/berlinizstad/followed.jpeg" alt="...">
+        <div class="two-row">
+          <img src="portfolkoio materia;/berlinizstad/WhatsApp Image 2026-02-12 at 03.39.27 (4).jpeg" alt="??">
+          <img src="portfolkoio materia;/berlinizstad/followed.jpeg" alt="...">
+        </div>
         <img src="portfolkoio materia;/berlinizstad/MPNS1936.jpg" alt="🌀👨‍🦰🧧🦊">
       </div>
       <h3>JJARDIN / RUEGO</h3>
@@ -125,7 +128,19 @@ function toggleContactMenu(event) {
   const contact = document.getElementById('contact-dropdown');
   const isOpen = contact.style.display === 'block';
   about.style.display = 'none';
-  contact.style.display = isOpen ? 'none' : 'block';
+  if (isOpen) {
+    contact.style.display = 'none';
+    contact.style.left = '';
+    contact.style.top = '';
+    contact.style.position = '';
+  } else {
+    const rect = event.currentTarget.getBoundingClientRect();
+    contact.style.position = 'fixed';
+    contact.style.left = rect.left + 'px';
+    contact.style.top = rect.bottom + 'px';
+    contact.style.zIndex = 300;
+    contact.style.display = 'block';
+  }
 }
 
 // Click outside closes any open dropdown

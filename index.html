@@ -227,8 +227,33 @@ function toggleAboutMenu(event) {
   const isOpen = about.style.display === 'block';
   // close the other one
   contact.style.display = 'none';
-  // toggle this one
-  about.style.display = isOpen ? 'none' : 'block';
+  if (isOpen) {
+    about.style.display = 'none';
+    about.style.left = '';
+    about.style.right = '';
+    about.style.position = '';
+    about.style.top = '';
+    about.style.zIndex = '';
+    about.style.transform = '';
+  } else {
+    const rect = event.currentTarget.getBoundingClientRect();
+    if (window.innerWidth <= 767) {
+      // on mobile, let CSS handle placement (static in flow) so it pushes content down
+      about.style.position = '';
+      about.style.left = '';
+      about.style.right = '';
+      about.style.top = '';
+      about.style.transform = '';
+      about.style.zIndex = '';
+    } else {
+      about.style.position = '';
+      about.style.left = '';
+      about.style.right = '';
+      about.style.top = '';
+      about.style.transform = '';
+    }
+    about.style.display = 'block';
+  }
 }
 
 function toggleContactMenu(event) {
@@ -237,7 +262,31 @@ function toggleContactMenu(event) {
   const contact = document.getElementById('contact-dropdown');
   const isOpen = contact.style.display === 'block';
   about.style.display = 'none';
-  contact.style.display = isOpen ? 'none' : 'block';
+  if (isOpen) {
+    contact.style.display = 'none';
+    contact.style.left = '';
+    contact.style.right = '';
+    contact.style.top = '';
+    contact.style.position = '';
+    contact.style.zIndex = '';
+  } else {
+    const rect = event.currentTarget.getBoundingClientRect();
+    if (window.innerWidth <= 767) {
+      // on mobile, use normal flow so dropdown pushes content
+      contact.style.position = '';
+      contact.style.left = '';
+      contact.style.right = '';
+      contact.style.top = '';
+      contact.style.zIndex = '';
+    } else {
+      contact.style.position = 'fixed';
+      contact.style.left = rect.left + 'px';
+      contact.style.top = rect.bottom + 'px';
+      contact.style.right = '';
+      contact.style.zIndex = 300;
+    }
+    contact.style.display = 'block';
+  }
 }
 
 // Click outside closes any open dropdown
@@ -279,6 +328,18 @@ window.addEventListener('scroll', () => {
   // Optional: prevent event bubbling from dropdown content clicks to avoid global close
 
   });
+
+// Reset dropdown positions when resizing to avoid off-screen states
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.dropdown-menu').forEach(m => {
+    m.style.display = 'none';
+    m.style.left = '';
+    m.style.right = '';
+    m.style.top = '';
+    m.style.position = '';
+    m.style.zIndex = '';
+  });
+});
 </script>
 </body>
 </html>
