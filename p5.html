@@ -47,33 +47,28 @@
   </aside>
 
   <main class="content">
-    <h2 class="section-title section-title--sticky">JJARDIN / RUEGO</h2>
+   <!--   <h2 class="section-title section-title--sticky">JJARDIN / RUEGO</h2>-->
 
     <div class="project">
-      <div class="proj-img-vert">
-        <img src="images/1233.jpeg" alt="😌🌀">
-        <img src="portfolkoio materia;/berlinizstad/MPNS1917.jpg" alt="??">
-        <!-- trīs attēli rindā (a, 8, b) -->
-        <div class="three-row">
-          <img src="portfolkoio materia;/berlinizstad/a.jpeg" alt="🌀👨‍🦰🧧🦊">
-          <img src="portfolkoio materia;/berlinizstad/star.jpeg" alt="💪">
-          <img src="portfolkoio materia;/berlinizstad/b.jpeg" alt="🌀👨‍🦰🧧🦊">
-        </div>
-        <img src="portfolkoio materia;/berlinizstad/MPNS1936.jpg" alt="🌀👨‍🦰🧧🦊">
-        <img src="portfolkoio materia;/berlinizstad/MPNS1890.jpg" alt="🌀👨‍🦰🧧🦊">
-        <div class="center-row">
-          <img src="portfolkoio materia;/berlinizstad/photo_2026-02-13_01-28-07.jpg" alt="🌀👨‍🦰🧧🦊" class="gallery-small-center">
-        </div>
-        </div>
+      <div class="video-wrap"> 
+        <iframe src="https://player.mediadelivery.net/embed/666391/cc5a23eb-e67d-48ab-a052-fd097f337727?autoplay=false&loop=true&muted=true&preload=true&responsive=true" 
+        loading="lazy" 
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
+        allowfullscreen="true"></iframe>
+      </div>
+        
         
     </div>
-      <h3>JJARDIN / RUEGO</h3>
-     <p class="location-date-text">One-day group show accompanied by musical performances
-      <br>Pandora Art Gallery, Berlin
-      <br> June 7, 2025. <br> <br></p>
-<p class="detail-text">The core of the exhibition is based upon  the visual and emotional language of lost-object notices—particularly those for missing animals, keys, and other personal belongings—using them as points of departure to explore absence, displacement, and the quiet melancholies embedded in everyday loss. 
- <br> <br> The exhibition featured a series of visual works, including gathered missing animal and item posters, photographies, drawings, and mixed-media pieces.
-  <br> <br>In addition to the visual works, the exhibition featured live musical performances. The gallery space was transformed into a contemplative environment where attendees could reflect on the transient nature of life and that which we hold dear.
+      <h3>Average internet experience b like</h3>
+     <p class="location-date-text">Gaze-reactive digital artwork</p>
+      2025 <br> </p>
+<p class="detail-text"> <br>More often than not the images we see in our daily lives are not of our own choosing. Instead they are the responsibility of a personalized algorithm unknown to the viewer, whose goal is to attract and hold our attention.
+
+<br>The abundance of visual material creates a flicker. In the hustle and bustle of everyday life, it is difficult to delve into the details, because not everything in front of our eyes is worth our careful attention. The amount of information and the variety of colors are tiring, but it is difficult to look away.
+
+<br><br>This work challenges the viewer to look until they get tired. If the frozen image visible out of the corner of their eye intrigues them, when they turn their head to the screen, it is immediately and inevitably replaced by the next one, followed by the next one, and the next one. They are relentless and do not mean much, except for what they reflect.
+
+<br> <br>The images used in the work were obtained from databases, which mostly contain randomly selected visual material borrowed from the Internet. It is complemented by photos of celebrity faces, animals, vegetables, COVID-19 lung X-rays, and chess pieces.
 </p>
 
     </div>
@@ -88,14 +83,6 @@
 
 <script>
 // ========== IMAGE MODAL (unchanged) ==========
-function updateSectionTitle() {
-  const title = document.querySelector('.section-title');
-  if (!title) return;
-
-  const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-  title.classList.toggle('is-bottom', isAtBottom);
-}
-
 function openImageModal(src, alt) {
   const modal = document.getElementById('image-modal');
   const img = document.getElementById('modal-image');
@@ -125,8 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
       openImageModal(e.currentTarget.src, e.currentTarget.alt);
     });
   });
-
-  updateSectionTitle();
 });
 
 // ========== DROPDOWNS: About on left, Contact on right ==========
@@ -197,10 +182,10 @@ window.addEventListener('scroll', () => {
     topBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
   }
 
-  updateSectionTitle();
-});
 
-window.addEventListener('resize', updateSectionTitle);
+  // Optional: prevent event bubbling from dropdown content clicks to avoid global close
+
+  });
 </script>
 </body>
 </html>
