@@ -334,10 +334,10 @@ a {
 
 .project h3 {
   font-size: 1.2rem;
-  font-weight: 420;
+  font-weight: 400;
   text-transform: uppercase;
   color: #1a1a1a;
-  margin-top: 0.15¡rem;
+  margin-top: 0.15rem;
   margin-bottom: 0.35rem;
   user-select: text;
 }
@@ -353,7 +353,7 @@ a {
 .project p {
   color: #4a3939;
   font-size: 0.9rem;
-  font-weight: 40;
+  font-weight: 400;
 }
 
 /* ===== FOOTER ===== */
