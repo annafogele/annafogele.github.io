@@ -47,35 +47,41 @@
   </aside>
 
   <main class="content">
-    <h2 class="section-title section-title--sticky">JJARDIN / RUEGO</h2>
+   <!--   <h2 class="section-title section-title--sticky">JJARDIN / RUEGO</h2>-->
 
     <div class="project">
-      <div class="proj-img-vert">
-        <img src="../../assets/images/1233.jpeg" alt="😌🌀">
-        <img src="../../assets/photomaterial/berlinizstad/MPNS1917.jpg" alt="??">
-        <!-- trīs attēli rindā (a, 8, b) -->
-        <div class="three-row">
-          <img src="../../assets/photomaterial/berlinizstad/a.jpeg" alt="🌀👨‍🦰🧧🦊">
-          <img src="../../assets/photomaterial/berlinizstad/star.jpeg" alt="💪">
-          <img src="../../assets/photomaterial/berlinizstad/b.jpeg" alt="🌀👨‍🦰🧧🦊">
+         <div class="proj-img-vert">
+        <div class="two-row">
+        <img src="../../assets/photomaterial/d1.jpg" alt="😴💤😵">
+        <img src="../../assets/photomaterial/d2.jpg" alt="👻🌸☁️">
         </div>
-        <img src="../../assets/photomaterial/berlinizstad/MPNS1936.jpg" alt="🌀👨‍🦰🧧🦊">
-        <img src="../../assets/photomaterial/berlinizstad/MPNS1890.jpg" alt="🌀👨‍🦰🧧🦊">
-        <div class="center-row">
-          <img src="../../assets/photomaterial/berlinizstad/photo_2026-02-13_01-28-07.jpg" alt="🌀👨‍🦰🧧🦊" class="gallery-small-center">
+      <div class="video-wrap"> 
+        <iframe src="https://player.mediadelivery.net/embed/666391/ffa139ea-516d-4a44-ab79-b811ef5f37c0?autoplay=false&loop=true&muted=false&preload=true&responsive=true" 
+        loading="lazy" 
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
+        allowfullscreen="true"></iframe>
+      </div>
+
+        <div class="two-row">
+        <img src="../../assets/photomaterial/d3.jpg" alt="👻🎵🎤">
+        <img src="../../assets/photomaterial/d4.jpg" alt="🕸️💾👻">
         </div>
-        </div>
-        
-    </div>
-      <h3>JJARDIN / RUEGO</h3>
-     <p class="location-date-text">One-day group show accompanied by musical performances
-      <br>Pandora Art Gallery, Berlin
-      <br> June 7, 2025. <br> <br></p>
-<p class="detail-text">
-  Two 2 meter long braids, a printed picture, five drawings and collected posters.
-<br><br>The core of the exhibition is based upon  the visual and emotional language of lost-object notices - particularly those for missing animals, keys, and other personal belongings - using them as points of departure to explore absence, displacement, and the quiet melancholies embedded in everyday loss. 
- <br> <br> The exhibition featured a series of visual works, including gathered missing animal and item posters, photographies, drawings, and mixed-media pieces.
-  <br> <br>In addition to the visual works, the exhibition featured live musical performances. The gallery space was transformed into a contemplative environment where attendees could reflect on the transient nature of life and that which we hold dear.
+      </div>
+      <h3>GHOST OF A SUMMERS PAST</h3>
+     <p class="location-date-text">
+      Photo/Video</p>
+     <span><em>Īdēt Muldēt Klusēt</em> - group exhibition
+      <br>Jaunmoku Castle, Latvia</span>
+      2025 <br> </p>
+<p class="detail-text"> 
+<br><em>What need have I for pitty from you / What need have you for sorrow of mine / Emptiness glimmers in the sunlight / Warmth hides in the breeze</em>
+<br> 
+<br>The legend of Jaunmoku Castle is based on a true event that took place at the beginning of the 20th century, and the legend tells of a young girl Doroteja, who everyone called simply Dorīte.
+<br>
+<br>After the restoration of Latvia's independence, the descendants of the von Ungern Sternberg family, the former owners of the castle, visited Jaunmoku Castle. After this visit, the staff received a letter from them describing a tragic incident that took place in the castle at the beginning of the last century. </br>
+<br>During the First World War, the German army was stationed in the castle. At that time, a young girl, Dorīte, worked as a nanny in the castle. Dorīte fell in love with an officer, for the army did not stay in one place for long. The officer left, but the girl remained carrying his baby. Dorīte, unable to survive the separation and not wanting to experience shame of an unwed mother, sought solace in the large pond of the castle.</br>
+<br>After this tragic event, the castle's residents sometimes saw the figure of a girl dressed in white in the attic. Dorīte's spirit had not brought peace.
+<br> <br>
 </p>
 
     </div>
@@ -90,14 +96,6 @@
 
 <script>
 // ========== IMAGE MODAL (unchanged) ==========
-function updateSectionTitle() {
-  const title = document.querySelector('.section-title');
-  if (!title) return;
-
-  const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-  title.classList.toggle('is-bottom', isAtBottom);
-}
-
 function openImageModal(src, alt) {
   const modal = document.getElementById('image-modal');
   const img = document.getElementById('modal-image');
@@ -127,8 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
       openImageModal(e.currentTarget.src, e.currentTarget.alt);
     });
   });
-
-  updateSectionTitle();
 });
 
 // ========== DROPDOWNS: About on left, Contact on right ==========
@@ -199,10 +195,10 @@ window.addEventListener('scroll', () => {
     topBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
   }
 
-  updateSectionTitle();
-});
 
-window.addEventListener('resize', updateSectionTitle);
+  // Optional: prevent event bubbling from dropdown content clicks to avoid global close
+
+  });
 </script>
 </body>
 </html>
