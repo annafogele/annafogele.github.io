@@ -21,6 +21,7 @@ body {
   letter-spacing: 0.02em;
   opacity: 0.9;
   text-align: justify;
+  
 }
 
 a {
@@ -261,6 +262,16 @@ a {
   margin-right: auto;
 }
 
+.project-video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
 /* ===== TWO-COLUMN ROW ===== */
 .proj-img-vert .two-row {
   display: flex;
@@ -348,6 +359,10 @@ a {
   z-index: 2;
   pointer-events: auto;
   cursor: pointer;
+}
+
+.project h3 u {
+  text-underline-offset: 0.12em;
 }
 
 .project p {
