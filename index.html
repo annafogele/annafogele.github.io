@@ -51,20 +51,18 @@
   <h2 class="section-title">works</h2>
 
 <div class="project">
-
-  <div class="video-wrap">
-  <iframe
-    src="https://player.mediadelivery.net/embed/666391/73d7380f-0f5d-4d51-898d-da37837c7d92?autoplay=true&loop=true&muted=true&preload=false&responsive=true"
-       loading="lazy"
-        allow="autoplay;encrypted-media;picture-in-picture;fullscreen;"
-        allowfullscreen="true"></iframe>
-   </div>
-
+  <video class="project-video" autoplay loop muted playsinline>
+  <source src="assets/photomaterial/migla/migla-gulamistaba-web.mp4" type="video/mp4">
+  </video>
+    <video class="project-video" autoplay loop muted playsinline>
+  <source src="assets/photomaterial/migla/migla-virtuve-web.mp4" type="video/mp4">
+  </video>
 <h3>
-  <u>Fog</u>
+  <a href="src/pages/migla.html">
+  <u>Fog</u></a>
 </h3>
-  <p>Looping gifs, 2026</p>
-</div>
+  <p>Video loops, 2025</p>
+ </div>
     
 
 <div class="project">
@@ -75,7 +73,8 @@
        allowfullscreen="true"></iframe>
   </div>
 <h3>
-  <a href="src/pages/p5.html">Average internet experience</a>
+  <a href="src/pages/p5.html">
+    <u>Average internet experience</u></a>
 </h3>
   <p>Gaze-reactive digital artwork, 2025</p>
 </div>
@@ -151,7 +150,7 @@
     </div>-->
 
 
-<div class="project">
+<div class="project" id="Test-1-2-3">
   <div class="video-wrap"> 
   <iframe src="https://player.mediadelivery.net/embed/666391/d7bafae6-3467-43a3-9f8c-85db0e4662f5?autoplay=false&loop=true&muted=true&preload=false&responsive=true" 
     loading="lazy" 
@@ -269,7 +268,7 @@ function closeImageModal() {
   img.src = '';
   modal._group = null;
   modal._index = null;
-}
+} 
 
 function openImageModalFromElement(imgEl) {
   const modal = document.getElementById('image-modal');

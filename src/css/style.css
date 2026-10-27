@@ -21,6 +21,7 @@ body {
   letter-spacing: 0.02em;
   opacity: 0.9;
   text-align: justify;
+  user-select: text;
   
 }
 
@@ -255,23 +256,23 @@ a {
   margin-bottom: 1rem;
 }
 
-.proj-img-vert img {
+.proj-img-vert img,
+.project-video {
   width: 100%;
   max-width: 800px;
-  height: auto;
-  object-fit: contain;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.project-video {
-  width: 100%;
-  max-width: 800px;
+.proj-img-vert img {
   height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  object-fit: contain;
+}
+
+.project-video {
+  height: auto;
+  aspect-ratio: 16 / 9;
   margin-bottom: 1rem;
 }
 
