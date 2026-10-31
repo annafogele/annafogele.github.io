@@ -1,0 +1,4 @@
+Contact: mailto:anna@annafogele.com
+Expires: 2027-01-03T14:44:00Z
+Canonical: https://annafogele.com/.well-known/security.txt
+Preferred-Languages: en, lv
